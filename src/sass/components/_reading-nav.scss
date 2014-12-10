@@ -1,0 +1,25 @@
+.reading__nav {
+	
+	position:fixed;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+
+	.prev,.next {
+		position:absolute;
+		top:50%;
+		height:100%;
+		.container {
+			display:block;
+			margin-top:-$bsu;			
+			path.arrow {fill:$brand-primary;}
+			&:hover {
+				path.arrow {fill:$brand-tertiary;}
+			}
+		}
+		padding:0 $bsu;
+	}
+	.prev {left:0;}
+	.next {right:0;}
+}

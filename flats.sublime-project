@@ -1,0 +1,27 @@
+{
+    "folders": [
+    {
+        "follow_symlinks": true,
+        "folder_exclude_patterns": 
+        	[
+        		".jekyll",
+        		".sass-cache", 
+        		"bower_components", 
+        		"node_modules", 
+        		"tasks",
+                "build/css",
+                "build/js",
+                "build/img",
+                ".tmp",
+        	],
+        "file_exclude_patterns": 
+	        [
+	        	".bowerrc", 
+	        	"bower.json", 
+	        	"Gemfile*", 
+	        	"package.json",
+                "project.sh",
+	        ],
+        "path": "."
+    }]
+}

@@ -1,0 +1,21 @@
+html {height:100%}
+body {height:100%}
+
+#outer-wrap {height:100%;}
+
+#inner-wrap {
+	min-height:100%;
+	overflow:hidden;
+}
+
+/*
+	A responsive container for holding things like SVG or videos.
+*/		
+.container {
+	display:block;
+	width:$bsu;
+	position:relative;
+	height:0;
+	padding-top:50%;
+	svg {position:absolute;top:0;left:0;}
+}

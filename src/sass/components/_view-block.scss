@@ -1,0 +1,49 @@
+.view-block {
+
+    &__body {
+        font-size:1.5em;
+        line-height:1.4;
+        font-family:$font-family-serif;
+        padding:0.5em 0;
+    }
+
+    &__media {
+    	padding:1em;
+    	position:relative;
+    	background-color:$gray-lighter;
+    	overflow:hidden;
+    }
+
+    .view-block__extras {
+
+    	font-size:0.75em;
+
+    	&__meta-box {
+    		&.gotsome {
+    			border:1px solid rgba($brand-primary,0.5);	
+    			color:rgba($brand-secondary,0.62);
+    			margin-top:1em;
+    			&:first-child {margin:0;}
+    			&:hover {
+					text-decoration:none;
+					background-color:$gray-lighter;
+				}
+    		}
+    		color:rgba($brand-secondary,0.12);
+    		display:block;
+    		border-radius:2px;    		
+    		padding:0.5em;
+    		text-align:center;
+    		line-height:1;
+    		transition:background-color 1s $easeOutQuint;
+    		font-weight:700;
+
+			.icon {
+				font-size:3em;
+				line-height:1.2;
+				font-weight:normal;
+			}
+			
+    	}
+    }
+}

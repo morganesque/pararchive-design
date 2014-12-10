@@ -1,0 +1,12 @@
+.your-stories {
+	
+	.edit-story {
+		margin-bottom:2em;	
+		&__item {
+			border-bottom:1px solid rgba(black,0.1);
+		}
+		&__edit {
+			margin-right:0.5em;
+		}
+	}
+}

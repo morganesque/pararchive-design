@@ -1,0 +1,33 @@
+{
+  "name": "gulp",
+  "version": "0.0.1",
+  "description": "default for gulp projects",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Morgan",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-util": "*",
+    "gulp-load-plugins": "*",
+    "gulp-jekyll": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-uglify": "*",
+    "gulp-svgmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-concat": "*",
+    "gulp-header": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-changed": "*",
+    "node-notifier": "*",
+    "stream-combiner": "*",
+    "browser-sync": "~0.9.1",
+    "gulp-cached": "0.0.3",
+    "gulp-footer": "*",
+    "gulp-shell": "~0.2.11"
+  }
+}

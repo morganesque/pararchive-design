@@ -1,0 +1,35 @@
+.header {
+	position:fixed;
+	top:0;left:0;
+	width:100%;
+	z-index:999;
+	
+	background-color:$brand-secondary;
+	color:white;
+	height:$bsu*2;
+
+	a {
+		color:white;
+		text-decoration:none;
+		&:hover {text-decoration:underline;}
+	}
+}
+
+.header__logo {
+	display:block;
+	float:left;
+	line-height:$bsu*2;	
+	margin-left:$bsu;
+}
+
+.header__identity {
+	float:right;
+	margin-top:$bsu/2;
+	margin-right:$bsu;
+	li {
+		padding:0 $bsu/2;
+		border-right:1px solid rgba(white,0.2);
+		&:last-child {border:none}
+	}
+	.username {opacity:0.5;}
+}

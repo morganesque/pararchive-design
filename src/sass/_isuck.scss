@@ -1,0 +1,34 @@
+/*
+	A load of styles which I've just hacked in
+	and should really be consolidated into other 
+	more organised places. If this file has 
+	anything in it beyond this comment then 
+	you can quite legitmately say that I 
+	comprehensively and commemoratively suck!
+*/
+
+hr {
+	&.center {margin:0 auto;}
+	&.half {width:50%;}
+	&.quart {width:25%;}
+}
+
+@keyframes anim-rotate {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+}
+
+.icon-spinner {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    animation: anim-rotate 2s infinite linear;
+
+    &:before {
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+}

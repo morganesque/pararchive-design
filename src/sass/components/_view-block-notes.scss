@@ -1,0 +1,48 @@
+.view-block__notes {
+    	
+    height:100%;
+    
+    .show-notes {
+    	position:relative;
+    	height:100%;
+    	// background-color:red;
+    	padding-bottom:100px;
+    	overflow:auto;
+
+		&__note {
+			width:99%;
+			border:1px solid rgba(black,0.12);
+			padding:1em 1em 0.25em 1em;
+			background-color:rgba(white,0.62);
+			margin-top:0;
+			margin-bottom:0.5em;
+			&.author {
+				border-color:rgba($brand-tertiary,0.2);
+				background-color:lighten(desaturate($brand-tertiary,40%),60%);
+			}
+		}		
+
+		.media-object {width:50px;margin-bottom:1em;}
+		.media-body p:first-child {margin-top:-5px}
+    }
+
+    .add-notes {
+		position:absolute;
+		left:0;bottom:0;width:100%;
+		background-color:$brand-primary;
+		color:white;
+		padding:0 1em;
+		// transition:transform 0.5s $easeInOutQuint;
+		textarea {
+			height:7em;
+		}
+		.show-button {display:none;}
+		&.out {
+			padding-top:1em;
+			transform:translateY(210px);
+			.show-button {
+				display:block;
+			}
+		}
+	}
+}
