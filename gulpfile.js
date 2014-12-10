@@ -3,6 +3,7 @@
 */        
 var gulp    = require('gulp'),
     fs      = require('fs');
+
 /*
     load all the other things.
 */        
@@ -19,6 +20,8 @@ var files = {
     "jsielib":  "lteie8.min.js",
 }
 
+var build = 'build/flats';
+
 /*
     keep all the globs together here.
 */        
@@ -28,7 +31,7 @@ var glob = {
     "img":      'src/img/**/*.{jpg,jpeg,gif,png}',
     "svg":      'src/img/**/*.svg',
     "jekyll":   ['src/jekyll/**/*.{html,yml,md,mkd,markdown}','_config.yml'],
-    "html":     'build/**/*.{html,yml,md,mkd,markdown,php}',
+    "html":     build+'/**/*.{html,yml,md,mkd,markdown,php}',
     "css":      '.tmp/*.css',
 };
 
@@ -37,10 +40,14 @@ var glob = {
 */        
 var dest = {
     "sass":      ".tmp",
-    "css":      "build/css",
-    "js":       "build/js",
-    "img":      "build/img",
+    "css":      build+"/css",
+    "js":       build+"/js",
+    "img":      build+"/img",
 }
+
+/*
+    - - - - - - - - - - - - - - - - - - - - - - - START OF TASKS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+*/       
 
 /*
     ----- SASS -----
@@ -59,9 +66,10 @@ gulp.task('sass',function()
             sourcemap: "auto", 
             sourcemapPath: 'sass'
         }),        
-        gulp.dest(dest.sass),
-        gulp.dest(dest.css)
+        gulp.dest(dest.sass), // put the css file in the sass location ready for autoprefixer.
+        gulp.dest(dest.css) // this makes sure the sourcemap gets to the live CSS fodler.
     );
+
     /*
         growl out any errors
     */        
@@ -75,15 +83,18 @@ gulp.task('sass',function()
         });
         this.emit('end');
     }); 
+
     return combined;       
 });
 
 /*
-    Just adding that last sourcmap line back in (because autoprefixer removes it).
-*/        
-gulp.task('sourcemap',function()
+    ----- AUTO PREFIX -----
+    (Takes the Sass'd CSS and autoprefixes it)
+    (Puts back in the sourcemap link which autoprefixer removes)
+*/    
+gulp.task('autoprefix',function()
 {
-    $.util.log('doing sourcemaps');   
+    $.util.log('doing autoprefix');   
     return gulp.src(glob.css)
         .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe($.footer('\n/*# sourceMappingURL=styles.css.map */\n'))
@@ -92,66 +103,36 @@ gulp.task('sourcemap',function()
 });
 
 /*
-    ----- AUTO PREFIX -----
-*/
-gulp.task('autoprefix',function()
-{
-    return gulp.src(glob.css)
-        .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))        
-        .pipe(gulp.dest(dest.css))
-        .pipe($.browserSync.reload({stream:true}));
-});
-
-/*
     ----- JEKYLL -----
+    (Runs Jekyll as a shell command)
 */
-gulp.task('jekyll',$.shell.task('jekyll build'));
+gulp.task('jekyll', $.shell.task(['jekyll build']) );
 
 /*
     ----- JS LIBRARIES -----
-    (minified into a single file)
+    (Minified into a single file)
 */
 gulp.task('libScripts',function()
 {
+    var createJSLib = function(conf,lib)
+    {
+        var src = refreshJSLibs(conf);
+        if (src.length)
+        {
+            $.util.log(src);   
+            return gulp.src(src,{base:'bower_components/'})
+                .pipe($.uglify())  
+                .pipe($.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
+                .pipe($.concat(lib))
+                .pipe(gulp.dest(dest.js))
+                .pipe($.browserSync.reload({stream:true}));
+        } else {
+            $.util.log('file empty ignoring');
+        }
+    }
+
     createJSLib(files.jsconf,files.jslib);
     createJSLib(files.jsieconf,files.jsielib);
-});
-
-function createJSLib(conf,lib)
-{
-    var src = refreshJSLibs(conf);
-    if (src.length)
-    {
-        $.util.log(src);   
-        return gulp.src(src,{base:'bower_components/'})
-            .pipe($.uglify())  
-            .pipe($.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
-            .pipe($.concat(lib))
-            .pipe(gulp.dest(dest.js))
-            .pipe($.browserSync.reload({stream:true}));
-    } else {
-        $.util.log('file empty ignoring');
-    }
-}
-
-/*
-    Check lib size
-*/        
-gulp.task('checkScripts',function()
-{
-    var src = refreshJSLibs();
-    if (src.length)
-    {
-        return gulp.src(src,{base:'bower_components/'})
-            .pipe($.uglify())  
-            .pipe($.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
-            .pipe($.gzip())
-            .pipe($.flatten())
-            .pipe($.filesize())
-            .pipe(gulp.dest('.tmp'));
-    } else {
-        $.util.log('file empty ignoring');
-    }
 });
 
 /*
@@ -196,7 +177,22 @@ gulp.task('bitmaps',function()
 });
 
 /*
-    ----- SYNC -----
+    ----- BROWSER SYNC TASK  -----
+    (so I can trigger it independantly for certain files)
+*/
+gulp.task('sync',function()
+{
+    return gulp.src(glob.html)
+        .pipe($.cached('htmlsync'))
+        .pipe($.browserSync.reload({stream:true}));
+});
+
+/*
+    - - - - - - - - - - - - - - - - - - - - - - - END OF TASKS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+*/        
+
+/*
+    ----- BROWSER SYNC SERVER -----
     (includes a server for flat builds)
 */
 gulp.task('browser-sync', function() {
@@ -208,24 +204,13 @@ gulp.task('browser-sync', function() {
 });
 
 /*
-    ----- BASIC LIVERELOAD -----
-    (so I can trigger it independantly for certain files)
-*/
-gulp.task('sync',function()
-{
-    return gulp.src(glob.html)
-        .pipe($.cached('htmlsync'))
-        .pipe($.browserSync.reload({stream:true}));
-});
-
-/*
     ----- WATCH -----
 */
 gulp.task('watch', function() 
 { 
         // Watch .scss files
         gulp.watch(glob.sass, ['sass']);     
-        gulp.watch(glob.css, ['sourcemap']); 
+        gulp.watch(glob.css, ['autoprefix']); 
 
         // Watch .js files
         gulp.watch(glob.js, ['scripts']);
@@ -241,7 +226,7 @@ gulp.task('watch', function()
         gulp.watch(glob.svg, ['svg']);
 
         // watch HTML (etc)
-        // gulp.watch(glob.html,['sync']) 
+        gulp.watch(glob.html,['sync']) 
 
         // Watch $.jekyll files
         gulp.watch(glob.jekyll, ['jekyll'])
@@ -252,6 +237,30 @@ gulp.task('watch', function()
 */
 gulp.task('default', ['browser-sync','watch']);
 
+/*
+    JAVASCRIPT SIZES
+    (A task to determine how mch javascript there is and which libraries are to blame)
+*/        
+gulp.task('checkScripts',function()
+{
+    var src = refreshJSLibs();
+    if (src.length)
+    {
+        return gulp.src(src,{base:'bower_components/'})
+            .pipe($.uglify())  
+            .pipe($.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
+            .pipe($.gzip())
+            .pipe($.flatten())
+            .pipe($.filesize())
+            .pipe(gulp.dest('.tmp'));
+    } else {
+        $.util.log('file empty ignoring');
+    }
+});
+
+/*
+    Quick function to grab the conf files and check through it's contents.
+*/        
 function refreshJSLibs(confFile)
 {
     var file = fs.readFileSync(confFile,'utf8').trim().split('\n');    
