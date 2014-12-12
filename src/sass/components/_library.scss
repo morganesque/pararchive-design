@@ -1,0 +1,112 @@
+#main {
+	margin:$bsu*2 $bsu 0;
+	padding-top:$bsu;
+}
+
+.page-header {
+	border-bottom:2px solid $grey-light;
+	margin-bottom:$bsu;
+}
+
+.section-header {
+	@extend .serif-face;	
+	@extend .gamma;
+	color:$grey;
+	font-weight:400;
+	margin-bottom:$bsu/2;	
+}
+
+.page-desc {
+	@extend .epsilon;
+	color:$brand-secondary;
+	max-width:38em;
+}
+
+.library-nav {
+
+	border-bottom:2px solid $grey-light;
+	margin-bottom:$bsu;
+
+	.tabs {
+		margin:0 auto;
+		text-align:center;
+		.tab {
+			display:inline-block;	
+			position:relative;
+			top:2px;		
+			width:250px;
+			padding:$bsu/4;
+			font-weight:700;
+			@extend .delta;
+			color:$brand-dark;	
+			
+			a {
+				color:inherit;
+				text-decoration:none;	
+			}
+			
+			&.selected {
+				color:$brand-secondary;
+				background-color:white;
+				border:2px solid $grey-light;
+				border-width:2px 2px 0 2px;					
+			}
+		}
+	}
+}
+
+.library-list {
+	padding-top:$bsu;
+
+	.grid__item {
+		@include aboveOr(pem(640))  {width: 1/2 * 100%;}
+		@include aboveOr(pem(960))  {width: 1/3 * 100%;}
+		@include aboveOr(pem(1280)) {width: 1/4 * 100%;}
+	}
+}
+
+.library-list__item {
+
+	background:#fee;
+	margin:0 $bsu/2 $bsu*2;
+
+	.my-image {
+		display:block;
+		position: relative;
+		width:100%; height:0;
+		padding-top:196px/276px * 100%;
+		background-position:center center;
+		background-size:100%;
+		filter:saturate(0.5);
+		transition:all 0.3s ease-out;		
+	}
+	&:hover .my-image {background-size:105%;filter:saturate(1);}
+
+	.my-label {
+		position: absolute;
+		top:0;left:0;
+		background-color:$brand-secondary;
+		color:white;
+		padding:0.25em 0.5em;
+		font-size:$milli-size;
+		text-transform:uppercase;
+	}
+
+	.my-desc {
+		padding:$bsu/2;
+		@extend .serif-face;		
+		background-color:$grey-light;
+	}
+
+	.my-actions {		
+		a {
+			display:block;
+			background-color:$grey-blue;		
+			padding:$bsu/4 $bsu/2;
+			font-weight:700;
+			color:$brand-dark;
+			text-decoration:none;
+		}
+	}
+
+}

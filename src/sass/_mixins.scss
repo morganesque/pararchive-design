@@ -5,7 +5,7 @@ ie8 and lower separate desktop stylesheet approach from here:
 http://jakearchibald.github.io/sass-ie/
 */
 
-@mixin above($width) {
+@mixin aboveOr($width) {
 
 	@if $fix-mqs {
         
@@ -17,7 +17,7 @@ http://jakearchibald.github.io/sass-ie/
     }
 }
 
-@mixin below($width) {
+@mixin belowOr($width) {
 
 	@if $fix-mqs {
         

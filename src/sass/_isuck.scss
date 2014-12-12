@@ -32,3 +32,11 @@ hr {
         -webkit-font-smoothing: antialiased;
     }
 }
+.icon-right {
+    float:right;
+    padding-top:0.25em;
+}
+
+.table--striped tbody tr:nth-of-type(odd) {
+    background-color:$grey-light;
+}

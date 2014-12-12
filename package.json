@@ -28,6 +28,8 @@
     "browser-sync": "~0.9.1",
     "gulp-cached": "0.0.3",
     "gulp-footer": "*",
-    "gulp-shell": "~0.2.11"
+    "gulp-shell": "~0.2.11",
+    "gulp-filter": "~1.0.2",
+    "gulp-sourcemaps": "~1.2.8"
   }
 }

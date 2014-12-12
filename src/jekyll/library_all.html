@@ -1,0 +1,64 @@
+---
+layout: default
+title: Library - All
+data:
+- 
+ title: How to make curtains
+ url: lib-curtains.jpg
+-
+ title: Grandad's WW1 Medal
+ url: lib-medal.jpg
+-
+ title: odlbirmingham.jpg
+ url: lib-birmingham.jpg
+-
+ title: Interview with Aunty Gladys
+ url: lib-audio.jpg
+-
+ title: Two years in the life of my mother
+ url: lib-mother.jpg
+-
+ title: It all started when on person...
+ url: lib-started.jpg
+---
+<header class="header cf">
+        {% include header.html %}
+</header>
+
+<div id="main">
+
+	<header class="page-header">
+		<h1 class="section-header">Your library</h1>
+	</header>
+
+	<p class="page-desc">Use your library to store links to artefacts, stories or blocks, on Pararchive or elsewhere on the web.</p>
+
+	<nav class="library-nav">
+		<div class="tabs">
+			<div class="selected tab">All items</div>
+			<div class="tab"><a href="{{site.baseurl}}/library_your/">Items in your stories</a></div>
+		</div>
+	</nav>
+	
+	<div class="library-list">
+		<div class="grid"><!--
+			{% if page.data %}
+		  		{% for item in page.data %}
+					--><div class="grid__item">
+						<div class="library-list__item">
+							<a class="my-image" style="background-image:url({{site.baseurl}}/img/{{item.url}});">						
+								<div class="my-label">video</div>						
+							</a>
+							<div class="my-desc">{{item.title}}</div>
+							<div class="my-actions">
+								<a href="#">Add a story&hellip;<span class="icon icon-right icon-remove"></span></a>
+								
+							</div>
+						</div>
+					</div><!--
+		  		{% endfor %}
+			{% endif %}			
+		--></div>
+	</div>
+	
+</div>

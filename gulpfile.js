@@ -54,19 +54,24 @@ var dest = {
 */        
 gulp.task('sass',function()
 {
+    var cssFilter = $.filter('*.css');
     /*
         combine everything together so I can catch errors.
     */        
     var combined = $.streamCombiner(
         gulp.src(glob.sass),
         $.rubySass({
-            style:'nested', // Can be nested, compact, compressed, expanded 
+            style:'compressed', // Can be nested, compact, compressed, expanded 
             loadPath:'bower_components', 
             quiet:true,
             sourcemap: "auto", 
             sourcemapPath: 'sass'
-        }),        
-        gulp.dest(dest.sass), // put the css file in the sass location ready for autoprefixer.
+        }),
+        cssFilter,
+        $.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
+        $.footer('/*# sourceMappingURL=styles.css.map */\n'),
+        cssFilter.restore(),
+        $.browserSync.reload({stream:true}),
         gulp.dest(dest.css) // this makes sure the sourcemap gets to the live CSS fodler.
     );
 
@@ -85,21 +90,6 @@ gulp.task('sass',function()
     }); 
 
     return combined;       
-});
-
-/*
-    ----- AUTO PREFIX -----
-    (Takes the Sass'd CSS and autoprefixes it)
-    (Puts back in the sourcemap link which autoprefixer removes)
-*/    
-gulp.task('autoprefix',function()
-{
-    $.util.log('doing autoprefix');   
-    return gulp.src(glob.css)
-        .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe($.footer('\n/*# sourceMappingURL=styles.css.map */\n'))
-        .pipe($.browserSync.reload({stream:true}))
-        .pipe(gulp.dest(dest.css))
 });
 
 /*

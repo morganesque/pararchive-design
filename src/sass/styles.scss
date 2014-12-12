@@ -6,7 +6,7 @@ $bsu:$base-spacing-unit;
 
 body {
 	@extend .brand-face;
-	font-weight:400;
+	font-weight:400;	
 }
 .serif-face {
 	font-family:$font-family-serif;
@@ -14,29 +14,25 @@ body {
 
 @import "icons";
 @import "layout";
+@import "colours";
+@import "typography";
 @import "components/header";
+
+/*
+	Done for the reading interface.
+*/		
 @import "components/reading-nav";
 @import "components/reading-blocks";
 
-
+/*
+	Done for the library.
+*/		
+@import "components/library";
 
 /*
 $headings-font-weight:		300;
 
-$brand-primary:         	#26b9b9;
-$brand-secondary:			#4c4f62;
-$brand-tertiary:			#a61520;
 
-$gray-darker:            	darken($brand-secondary, 10%) !default; // #222
-$gray-dark:              	darken($brand-secondary, 5%) !default;   // #333
-$gray:                   	lighten($brand-secondary, 0%) !default; // #555
-$gray-light:             	lighten($brand-secondary, 50%) !default;   // #999
-$gray-lighter:           	lighten($brand-secondary, 60%) !default; // #eee
-
-$brand-success:         	#5cb85c;
-$brand-info:            	#5bc0de;
-$brand-warning:         	#f0ad4e;
-$brand-danger:          	#d9534f;
 
 $grid-gutter-width:         16px !default;
 
@@ -60,5 +56,3 @@ $grid-gutter-width:         16px !default;
 */
 
 @import "isuck";
-.emd { // this is the end ––––––
-}
