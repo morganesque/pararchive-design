@@ -1,109 +1,137 @@
 var data = [];
 
-$(document).on("ready",function(e)
+$(window).on("load",function(e)
 {		
-	var blocks = $('.block');
-	var current = 0;
-	var prev = $('.prev .container');
-	var next = $('.next .container');
-	var meta = $('.block__meta');
-	var prog = $('.block__meta .progress');
-	var star = $('.block__meta .star');
-	var notes = $('.block__meta .notes a');
-	var links = $('.block__meta .links a');
-	var places = $('.block__meta .places a');
-	var timer;
+	var controller = new ScrollMagic();	
+	var offset = 48;
+	var ui = {};
+	ui.blocks = $('.block');
+	ui.prev = $('.prev .container');
+	ui.next = $('.next .container');		
+	ui.begin = $('.begin');		
 
-	var controller = new ScrollMagic();		
+	var navigation = {
 
-	blocks.each(function(i,v){
-		data[i] = {
-			star:Math.round(Math.random()*1),
-			notes:1 + Math.floor(Math.random()*5),
-			links:1 + Math.floor(Math.random()*5),
-			places:1 + Math.floor(Math.random()*3),
-		};
-	});
+		current:-1,
+		animating:false,
 
-	function updateBox(a)
-	{
-		console.log(a.type,a.target.number);		
-		current = a.target.number;				
-		updateNavs();
-
-		if (a.type == 'leave')				
+		updateOnScroll:function(a,b,c)
 		{
-			meta.addClass('change');	
-		}
-		
-		if (a.type == 'enter')				
+			if (this.animating) return;
+
+			this.current = a.target.number;
+			this.updateNavs();
+		},
+
+		updateNavs:function()
 		{
-			// clearTimeout(timer);
-			timer = setTimeout(function()
+			if (this.current == -1) ui.prev.css({"opacity":0.2});
+			else ui.prev.css({"opacity":1});
+
+			if (this.current == ui.blocks.length-1) ui.next.css({"opacity":0.2});
+			else ui.next.css({"opacity":1});
+		},
+
+		prevClick:function(e)
+		{
+			e.preventDefault();
+			if (this.current >= 0) 
 			{
-				prog.text((current+1)+'/'+blocks.length);
-				star.toggleClass('showing',!!data[current].star);
-				notes.text(data[current].notes+' notes');
-				links.text(data[current].links+' links');
-				places.text(data[current].places+' places');
-				meta.removeClass('change');				
-			},300);
-		}
-	}
+				this.current--;
+				this.showBlock();
+			}
+		},
 
-	blocks.each(function(i,v)
+		nextClick:function(e)
+		{
+			e.preventDefault();
+			if (this.current < ui.blocks.length-1) 
+			{
+				this.current++;
+				this.showBlock();
+			}
+		},
+
+		showBlock:function()
+		{
+			console.log(this.current);		
+			this.animating = true;
+			if (this.current < 0)
+			{
+				$('html, body').stop(true,false).animate({
+			        scrollTop: 0,
+			    }, 2000, 'easeOutQuint',_.bind(this.doneAnimating,this));
+			} else {
+				var dy = $(ui.blocks[this.current]).offset().top - offset;
+				$('html, body').stop(true,false).animate({
+			        scrollTop: dy,
+			    }, 2000, 'easeOutQuint',_.bind(this.doneAnimating,this));
+			    this.updateNavs();	
+			}
+		},
+
+		doneAnimating:function()
+		{	
+			this.animating = false;
+		},
+	};
+
+	ui.blocks.each(function(a,b)
 	{
-		var h = $(v).height();
-		var t = new ScrollScene({triggerElement:$(v), duration:h})
-					.on("enter leave", updateBox)
-					.addTo(controller);
-		t.number = i;
-	});
+		var body = $(b).find('.block__body');
+		var meta = $(b).find('.block__meta');		
+		var bh = $(body).outerHeight(); console.log(bh);		
+		var mh = $(meta).outerHeight();
 
-	var showBlock = function()
-	{
-		var dy = $(blocks[current]).offset().top - (24*6);
+		var o = new ScrollScene({
+				triggerElement: body, 
+				duration: bh-mh,
+				triggerHook:0,
+				offset:-offset,
+			})
+			.on('enter', _.bind(navigation.updateOnScroll,navigation))
+			.setPin(meta[0],{pushFollowers:false})
+			.addTo(controller);
 
-		$('html, body').animate({
-	        scrollTop: dy,
-	    }, 2000, 'easeOutQuint');
-	}
+		o.number = a;
+	});	
 
-	var updateNavs = function()
-	{
-		if (current == 0) prev.css({"opacity":0.2});
-		else prev.css({"opacity":1});
+	ui.prev.on('click',_.bind(navigation.prevClick,navigation));
+	ui.next.on('click',_.bind(navigation.nextClick,navigation));
+	navigation.updateNavs();
 
-		if (current == blocks.length-1) next.css({"opacity":0.2});
-		else next.css({"opacity":1});
-	}
-
-	prev.on('click',function(e)
+	ui.begin.on('click',function(e)
 	{
 		e.preventDefault();
-		if (current > 0) 
-		{
-			current--;
-			showBlock();
-		}
+		console.log("click begin");		
+		navigation.current = 0;
+		navigation.showBlock();
 	});
 
-	next.on('click',function(e)
-	{
-		e.preventDefault();
-		if (current < blocks.length-1) 
-		{
-			current++;
-			showBlock();
-		}
-	});
-
-	updateNavs();
 });
 
 $(window).on('load', function(){
 	setTimeout(function(){
     	$('html body').scrollTop(0);
     },10);
-    
+});
+
+
+$(window).on("load",function(e)
+{
+	var ui = {};
+	ui.close = $('.close');
+	ui.notes = $('.notes a');
+
+	ui.close.on('click',function(e)
+	{
+		e.preventDefault();
+		$(this).closest('.block__notes').removeClass('showing');
+	});	
+
+	ui.notes.on('click',function(e)
+	{
+		e.preventDefault();
+		$(this).closest('.block').find('.block__notes').addClass('showing');
+	})
 });
