@@ -8,6 +8,9 @@ body {
 	@extend .brand-face;
 	font-weight:400;	
 }
+.sans-face {
+	font-family:$font-family-sans-serif;
+}
 .serif-face {
 	font-family:$font-family-serif;
 }
@@ -29,6 +32,14 @@ body {
 */		
 @import "components/library";
 
+/*
+	Done for the library.
+*/		
+@import "components/artefact";
+/*
+	Done for Archive Partner
+*/		
+@import "components/archive-partner";
 /*
 $headings-font-weight:		300;
 

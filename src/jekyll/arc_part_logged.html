@@ -1,0 +1,93 @@
+---
+layout: default
+title: Library - All
+username: Science Museum
+data:
+- 
+ title: How to make curtains
+ url: lib-curtains.jpg
+-
+ title: Grandad's WW1 Medal
+ url: lib-medal.jpg
+-
+ title: odlbirmingham.jpg
+ url: lib-birmingham.jpg
+-
+ title: Interview with Aunty Gladys
+ url: lib-audio.jpg
+-
+ title: Two years in the life of my mother
+ url: lib-mother.jpg
+-
+ title: It all started when on person...
+ url: lib-started.jpg
+---
+<header class="header cf">
+        {% include header.html %}
+</header>
+
+<div id="main">
+
+	<header class="page-header">
+		<h1 class="section-header">Hello, Science Museum</h1>
+	</header>
+
+	<div class="archive-partner">
+		<div class="my-logo"><img src="{{site.baseurl}}/img/logos/science-museum.png" /></div>
+		<p class="my-details">
+			You currently have 383 artefacts in your <a href="#">Master Collection</a><br />
+			<a href="#">26 artefacts</a> are being used in <a href="#">16 stories</a>
+		</p>
+		<a href="#" class="button">Edit Profile</a>
+	</div><!-- .archive-partner -->
+
+	<div class="archive-partner-lists">
+		<div class="grid">
+			<div class="grid__item left">
+				<div class="list">
+					<h3 class="sub-header">Collections (13)</h3>
+					<p><a href="#" class="button">New Catalogue</a></p>
+					<ul class="block-list">
+						<li><a href="#" class="block-list__link">Animals in WW1 <small>(15 artefacts)</small></a></li>
+						<li><a href="#" class="block-list__link">Pionerring Women <small>(15 artefacts)</small></a></li>
+						<li><a href="#" class="block-list__link">Lumiere Brothers <small>(15 artefacts)</small></a></li>
+						<li><a href="#" class="block-list__link">London Undergound <small>(15 artefacts)</small></a></li>
+					</ul>
+					<p><a href="#">All 13 catalogues</a></p>
+				</div>				
+			</div><div class="grid__item right">
+				<div class="list">
+					<h3 class="sub-header">Stories (8)</h3>
+					<p><a href="#" class="button">New Story</a></p>
+					<ul class="block-list">
+						<li><a href="#" class="block-list__link">Animals in WW1</a></li>
+						<li><a href="#" class="block-list__link">Pionerring Women</a></li>
+						<li><a href="#" class="block-list__link">Lumiere Brothers</a></li>
+						<li><a href="#" class="block-list__link">London Undergound</a></li>
+					</ul>
+					<p><a href="#">All 8 stories</a></p>
+				</div>				
+			</div><div class="grid__item">
+				<div class="list">
+					<h3 class="sub-header">Artefacts (250)</h3>
+					<p><a href="#" class="button">Add artefacts</a></p>
+					<div class="grid library-list"><!--
+					{% if page.data %}
+				  		{% for item in page.data %}
+							--><div class="grid__item">
+								<div class="library-list__item">
+									<a class="my-image" style="background-image:url({{site.baseurl}}/img/{{item.url}});">						
+										<div class="my-label">video</div>						
+									</a>
+									<div class="my-desc">{{item.title}}</div>
+								</div>
+							</div><!--
+				  		{% endfor %}
+					{% endif %}			
+				--></div>
+					<p><a href="#">All 250 artefacts in your Master Collection</a></p>
+				</div>				
+			</div>
+		</div><!-- .grid -->
+	</div><!-- .archive-partner-lists -->
+</div>

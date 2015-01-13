@@ -1,0 +1,37 @@
+.archive-partner {
+	padding:$bsu;
+	background-color:$grey-blue;
+	margin-bottom:$bsu;
+
+	.my-logo {
+		width:70px;
+		float:left;		
+		margin:0 $bsu $bsu 0;
+	}
+
+	.my-details {
+		p {
+			margin-bottom:0;
+		}
+	}
+}
+
+.archive-partner-lists {
+
+	@include aboveOr(pem(768))
+	{
+		.left {width:62%}
+		.right {width:38%}		
+	}
+}
+
+.list {	
+	padding-top:$bsu;
+}
+
+.sub-header {
+	border-bottom:4px solid $grey-blue;
+	text-transform:uppercase;
+	@extend .delta;
+	padding-bottom:$bsu/2;
+}

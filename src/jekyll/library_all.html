@@ -40,25 +40,22 @@ data:
 		</div>
 	</nav>
 	
-	<div class="library-list">
-		<div class="grid"><!--
-			{% if page.data %}
-		  		{% for item in page.data %}
-					--><div class="grid__item">
-						<div class="library-list__item">
-							<a class="my-image" style="background-image:url({{site.baseurl}}/img/{{item.url}});">						
-								<div class="my-label">video</div>						
-							</a>
-							<div class="my-desc">{{item.title}}</div>
-							<div class="my-actions">
-								<a href="#">Add a story&hellip;<span class="icon icon-right icon-remove"></span></a>
-								
-							</div>
+	<div class="grid library-list"><!--
+		{% if page.data %}
+	  		{% for item in page.data %}
+				--><div class="grid__item">
+					<div class="library-list__item">
+						<a class="my-image" style="background-image:url({{site.baseurl}}/img/{{item.url}});">						
+							<div class="my-label">video</div>						
+						</a>
+						<div class="my-desc">{{item.title}}</div>
+						<div class="my-actions">
+							<a href="#">Add a story&hellip;<span class="icon icon-right icon-remove"></span></a>	
 						</div>
-					</div><!--
-		  		{% endfor %}
-			{% endif %}			
-		--></div>
-	</div>
+					</div>
+				</div><!--
+	  		{% endfor %}
+		{% endif %}			
+	--></div>
 	
 </div>

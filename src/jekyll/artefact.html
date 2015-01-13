@@ -1,0 +1,52 @@
+---
+layout: default
+title: Artefact Page
+data: 
+- 
+ title: The Pelmet Conspiracy
+ desc: This is a medal found in a drawer in a disused Stoke office and we are trying...
+-
+ title: My life as a Mermaid
+ desc: Here is another extract of description from a different story whiete this pic is used...
+-
+ title: The legacy of Manchester linen
+-
+ title: It's curtains for you!
+---
+<header class="header cf">
+        {% include header.html %}
+</header>
+
+<div id="main">
+
+	<header class="page-header">
+		<h1 class="section-header">Medal.jpg</h1>
+	</header>
+	
+	<div class="artefact">
+		<div class="grid">
+			<div class="grid__item left">
+				<div class="my-media" style="background-image:url({{site.baseurl}}/img/artefact-medal.jpg);"></div>
+				<div class="my-desc">
+					Source: <a href="#">flickr.com/photos/imran/213762136218/</a>
+				</div>
+			</div><div class="grid__item right">
+				<div class="my-action">
+					<a href="#" class="button">Add To Story</a>
+				</div>
+				<div class="my-details">
+					<h3>Appears in:</h3>
+	  				{% for item in page.data %}
+						<div class="my-appear">
+							<h4>{{item.title}}</h4>
+							<p>{{item.desc}}</p>
+						</div>
+  					{% endfor %}					
+				</div>
+				<p>This item is free to be used in your stories, and is distributed under a Creative Commons license. <a href="#">More about Creative Commons</a>.</p>
+				<img src="{{site.baseurl}}/img/cc.jpg" />  
+			</div><!-- .grid__item -->
+		</div><!-- .grid -->		
+	</div><!-- .artefact -->
+
+</div><!-- #main -->

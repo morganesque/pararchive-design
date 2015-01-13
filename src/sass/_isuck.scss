@@ -1,42 +1,86 @@
 /*
-	A load of styles which I've just hacked in
-	and should really be consolidated into other 
-	more organised places. If this file has 
-	anything in it beyond this comment then 
-	you can quite legitmately say that I 
-	comprehensively and commemoratively suck!
+    A load of styles which I've just hacked in
+    and should really be consolidated into other 
+    more organised places. If this file has 
+    anything in it beyond this comment then 
+    you can quite legitmately say that I 
+    comprehensively and commemoratively suck!
 */
 
 hr {
-	&.center {margin:0 auto;}
-	&.half {width:50%;}
-	&.quart {width:25%;}
+    &.center {
+        margin: 0 auto;
+    }
+    &.half {
+        width: 50%;
+    }
+    &.quart {
+        width: 25%;
+    }
 }
 
+a {
+    text-decoration: none;
+    color: $brand-dark;
+}
+
+.-m0 {
+    margin-bottom:0;
+}
+
+.button {
+    @extend .sans-face;
+    font-weight: 400;
+    line-height: 1em;
+    height: 2em;
+    padding: $bsu/4 $bsu;
+    transition: all .5s $easeOutQuint;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 1em;
+    background-color: $brand-primary;
+    border:none;
+
+    @extend .zeta;
+    &:hover {
+        background-color: $brand-tertiary;
+        box-shadow: 0 2px 2px rgba(black,.22);
+    }
+
+    &.large {
+        @extend .gamma;
+        padding:$bsu/2 $bsu*2;
+    }
+}
+
+
 @keyframes anim-rotate {
-    0% {transform: rotate(0);}
-    100% {transform: rotate(360deg);}
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .icon-spinner {
+    line-height: 1;
     display: inline-block;
     height: 1em;
-    line-height: 1;
     animation: anim-rotate 2s infinite linear;
-
     &:before {
-        speak: none;
-        font-style: normal;
         font-weight: normal;
+        font-style: normal;
         line-height: 1;
+
+        speak: none;
         -webkit-font-smoothing: antialiased;
     }
 }
 .icon-right {
-    float:right;
-    padding-top:0.25em;
+    float: right;
+    padding-top: .25em;
 }
-
 .table--striped tbody tr:nth-of-type(odd) {
-    background-color:$grey-light;
+    background-color: $grey-light;
 }
