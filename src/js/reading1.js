@@ -103,19 +103,11 @@ $(window).on("load",function(e)
 	ui.begin.on('click',function(e)
 	{
 		e.preventDefault();
-		console.log("click begin");		
 		navigation.current = 0;
 		navigation.showBlock();
 	});
 
 });
-
-$(window).on('load', function(){
-	setTimeout(function(){
-    	$('html body').scrollTop(0);
-    },10);
-});
-
 
 $(window).on("load",function(e)
 {

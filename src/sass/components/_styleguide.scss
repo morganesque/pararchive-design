@@ -1,0 +1,96 @@
+.main {
+	max-width:960px;
+	margin:$bsu*2 auto 0;	
+	padding:$bsu 0;
+	.pattern-section {
+		background:$grey-light;
+		padding:$bsu/2 $bsu;
+		small {
+			font-size:1em;
+		}
+	}
+}
+
+.pattern {
+
+	margin-bottom:$bsu*4;
+
+	.pattern__title {
+		color:rgba(black,0.76);
+		margin-bottom:$bsu/2;
+		border-bottom:1px solid rgba($grey,0.22);
+		padding:$bsu/4 $bsu/2;
+	}
+
+	.col {
+		height:$bsu*5;
+		min-width:100px;
+		text-align:center;
+		line-height:1.5;
+		display:inline-block;
+		margin:0 $bsu/2 $bsu/2 0;
+		padding:$bsu $bsu/2;
+		color:white;
+
+		&.brand-dark {background-color:$brand-dark;}
+		&.brand-primary {background-color:$brand-primary;}
+		&.brand-secondary {background-color:$brand-secondary;}
+		&.brand-tertiary {background-color:$brand-tertiary;}
+		&.grey {background-color:$grey;}
+		&.grey-light {background-color:$grey-light;color:black}
+		&.grey-blue {background-color:$grey-blue;color:black}
+	}
+
+	.fontsize * {
+		@extend .serif-face;
+		line-height:$bsu*3/2;
+	}
+
+	.fontfaces {
+		@extend .alpha;
+		line-height:1;
+	}
+
+	.typography .example {
+		margin-bottom:$bsu*2;
+	}
+
+	.buttons .example {
+		margin-bottom:$bsu/2;
+	}
+
+	.icon-example {
+		display:inline-block;
+		text-align:center;
+		margin:0 $bsu $bsu*3/2 0;
+	}
+
+	.icon {
+		display:inline-block;
+		font-size:3em;
+		margin-bottom:$bsu/2;
+	}
+}
+
+.pattern__notes {
+	color:$grey;
+	font-family:monospace;
+	margin-left:1.2em;
+	width:50%;
+	text-indent:-1.2em;
+	font-size:0.9em;
+	&::before {content:'\2014\0020';}
+	a {
+		color:$brand-primary;
+		padding-bottom:$bsu/8;
+		text-decoration:underline;
+		&:hover {color:lighten($brand-primary,10%);}
+	}
+}
+
+pre {
+	background-color:$grey-light;
+	padding:0 $bsu/2;
+	margin:$bsu/2 0;
+	font-size:0.8em;
+}

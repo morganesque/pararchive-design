@@ -1,0 +1,40 @@
+
+.sans-face {
+	font-family:$font-family-sans-serif;
+	font-weight:400;
+	strong {font-weight:700;}
+}
+
+.serif-face {
+	font-family:$font-family-serif;
+	font-weight:300;
+	strong {font-weight:400;}
+}
+
+.third-face {
+	font-family:$font-family-third;
+	font-weight:400;
+}
+
+.section-header {
+	@extend .sans-face;	
+	@extend .beta;
+	font-weight:400;
+	color:$grey;
+	margin-bottom:$bsu/2;	
+}
+
+.sub-header {
+	@extend .sans-face;
+	@extend .delta;
+	font-weight:700;
+	border-bottom:4px solid $grey-blue;
+	text-transform:uppercase;	
+	padding-bottom:$bsu/2;
+}
+
+body {
+	@extend .serif-face;
+	font-weight:400;
+	color:$grey;
+}

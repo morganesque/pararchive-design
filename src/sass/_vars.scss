@@ -1,10 +1,7 @@
 /* my vars */
-
-$brand-primary:         	#26b9b9;
-$brand-secondary:			#4c4f62;
-$brand-tertiary:			#a61520;
 $font-family-sans-serif:  	"Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       	"Halant", serif !default;
+$font-family-third:       	'Oswald', sans-serif, !default;
 
 /* bits of inuit I'm using */
 $using:true;
@@ -61,6 +58,5 @@ $h6-size:           14px!default; // .zeta		// dean
 $milli-size:        12px!default; // dean
 $micro-size:        10px!default;
 
-$brand-color:       $brand-primary!default;
 $brand-face:        $font-family-sans-serif!default;
 $brand-round:       4px!default;

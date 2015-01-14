@@ -1,29 +1,20 @@
 @import "mixins";
 @import "vars";
+@import "colours";
 
 @import "inuit.css/inuit";
-$bsu:$base-spacing-unit;
-
-body {
-	@extend .brand-face;
-	font-weight:400;	
-}
-.sans-face {
-	font-family:$font-family-sans-serif;
-}
-.serif-face {
-	font-family:$font-family-serif;
-}
+$bsu:$base-spacing-unit; // shorthand.
 
 @import "icons";
 @import "layout";
-@import "colours";
 @import "typography";
 @import "components/header";
+@import "components/buttons";
 
 /*
 	Done for the reading interface.
 */		
+@import "components/reading-story";
 @import "components/reading-nav";
 @import "components/reading-blocks";
 
@@ -36,19 +27,24 @@ body {
 	Done for the library.
 */		
 @import "components/artefact";
+
 /*
 	Done for Archive Partner
 */		
 @import "components/archive-partner";
+
 /*
+	Stuff for the styleguide - don't really need to include this is final styles.
+*/		
+@import "components/styleguide";
+
+
+/*
+–– TAKE OUT BEFORE MOVING TO PRODUCTION CODE.
+
 $headings-font-weight:		300;
-
-
-
 $grid-gutter-width:         16px !default;
-
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
-
 @import "icons";
 @import "layout";
 @import "components/login";
@@ -63,7 +59,6 @@ $grid-gutter-width:         16px !default;
 // @import "components/view-block";
 // @import "components/view-block-notes";
 // @import "components/view-block-artefacts";
-
 */
 
 @import "isuck";

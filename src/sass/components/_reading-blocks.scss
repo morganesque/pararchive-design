@@ -38,40 +38,7 @@
 	}
 }
 
-.story__header {	
-	position:relative;
-	background: 
-			linear-gradient(
-				rgba($brand-primary,0.9),
-				rgba($brand-primary,0.5)
-			),
-			url('../img/reading-back.jpg');		
-	background-position:center center;
-	background-size:cover;
-	padding:$bsu 19% $bsu*2;
-	margin-bottom:$bsu;
 
-	.name {
-		@extend .serif-face;
-		font-size:3.5em;
-		font-weight:300;
-		color:white;
-		margin:0 auto 0.25em;
-	}
-	.byline {
-		font-size:2em;
-	}
-
-	a {color:$brand-primary;text-decoration:none}		
-}	
-
-.story__description {
-	@extend .gamma;
-	@extend .serif-face;
-	color:$grey;
-	margin-bottom:$bsu*2;
-	line-height:1.4
-}
 
 .block__meta {
 	

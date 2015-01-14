@@ -9,11 +9,12 @@ title: Home
 <section class="reading">
 
 	<header class="story__header">
-		<h1 class="name">lgbt*iq social history</h1>
-		<p class="byline">by <span class="author">Trevor Bayliss</span></p>
+		<h1 class="story__name">lgbt*iq social history</h1>
+		<p class="story__byline">by <span class="author">Trevor Bayliss</span></p>
 	</header>
 
 	<!-- previous and next navigation buttons -->
+	{% comment %}
 	<div class="reading__nav">
 		<div class="prev">
 			<a href="#" class="container">{% include img/left-arrow.svg %}</a>
@@ -22,6 +23,7 @@ title: Home
 			<a href="#" class="container">{% include img/right-arrow.svg %}</a>
 		</div>
 	</div>
+	{% endcomment %}
 
 	<!-- Actual story blocks -->
 	<div class="reading__blocks">		
