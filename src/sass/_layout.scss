@@ -6,6 +6,7 @@ body {height:100%}
 #inner-wrap {
 	min-height:100%;
 	overflow:hidden;
+	margin-top:$bsu*2;
 }
 
 /*
@@ -18,4 +19,14 @@ body {height:100%}
 	height:0;
 	padding-top:50%;
 	svg {position:absolute;top:0;left:0;}
+}
+
+.reading .reading__blocks {
+	position:relative;	
+	margin:0 auto;
+	width:95%;
+	max-width:960px;
+	@include aboveOr(pem(640)) {width:84%;}
+	@include aboveOr(pem(1024)) {width:76%;}
+	@include aboveOr(pem(1280)) {width:62%;}
 }

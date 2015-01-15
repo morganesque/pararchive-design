@@ -6,8 +6,8 @@ $(window).on("load",function(e)
 	var offset = 48;
 	var ui = {};
 	ui.blocks = $('.block');
-	ui.prev = $('.prev .container');
-	ui.next = $('.next .container');		
+	// ui.prev = $('.prev .container');
+	// ui.next = $('.next .container');		
 	ui.begin = $('.begin');		
 
 	var navigation = {
@@ -20,17 +20,17 @@ $(window).on("load",function(e)
 			if (this.animating) return;
 
 			this.current = a.target.number;
-			this.updateNavs();
+			// this.updateNavs();
 		},
 
-		updateNavs:function()
-		{
-			if (this.current == -1) ui.prev.css({"opacity":0.2});
-			else ui.prev.css({"opacity":1});
+		// updateNavs:function()
+		// {
+		// 	if (this.current == -1) ui.prev.css({"opacity":0.2});
+		// 	else ui.prev.css({"opacity":1});
 
-			if (this.current == ui.blocks.length-1) ui.next.css({"opacity":0.2});
-			else ui.next.css({"opacity":1});
-		},
+		// 	if (this.current == ui.blocks.length-1) ui.next.css({"opacity":0.2});
+		// 	else ui.next.css({"opacity":1});
+		// },
 
 		prevClick:function(e)
 		{
@@ -66,13 +66,14 @@ $(window).on("load",function(e)
 				$('html, body').stop(true,false).animate({
 			        scrollTop: dy,
 			    }, 2000, 'easeOutQuint',_.bind(this.doneAnimating,this));
-			    this.updateNavs();	
+			    // this.updateNavs();	
 			}
 		},
 
 		doneAnimating:function()
 		{	
 			this.animating = false;
+			// $('html, body').off("scroll mousedown DOMMouseScroll mousewheel keyup");
 		},
 	};
 
@@ -80,7 +81,7 @@ $(window).on("load",function(e)
 	{
 		var body = $(b).find('.block__body');
 		var meta = $(b).find('.block__meta');		
-		var bh = $(body).outerHeight(); console.log(bh);		
+		var bh = $(body).outerHeight();
 		var mh = $(meta).outerHeight();
 
 		var o = new ScrollScene({
@@ -96,15 +97,26 @@ $(window).on("load",function(e)
 		o.number = a;
 	});	
 
-	ui.prev.on('click',_.bind(navigation.prevClick,navigation));
-	ui.next.on('click',_.bind(navigation.nextClick,navigation));
-	navigation.updateNavs();
+	// ui.prev.on('click',_.bind(navigation.prevClick,navigation));
+	// ui.next.on('click',_.bind(navigation.nextClick,navigation));
+	// navigation.updateNavs();
 
+	/*
+		When they click the Begin button at the top of the story.
+	*/		
 	ui.begin.on('click',function(e)
 	{
 		e.preventDefault();
 		navigation.current = 0;
 		navigation.showBlock();
+	});
+
+	/*
+		Stop animation if the user starts to do something during it.
+	*/		
+	$('html, body').on("scroll mousedown DOMMouseScroll mousewheel keyup",function()
+	{
+		$('html, body').stop();
 	});
 
 });
@@ -113,17 +125,25 @@ $(window).on("load",function(e)
 {
 	var ui = {};
 	ui.close = $('.close');
-	ui.notes = $('.notes a');
+	ui.notes = $('.meta__notes a');
+	ui.links = $('.meta__links a');
 
 	ui.close.on('click',function(e)
 	{
 		e.preventDefault();
-		$(this).closest('.block__notes').removeClass('showing');
+		$(this).closest('.meta__container').removeClass('notes');
+		$(this).closest('.meta__container').removeClass('links');
 	});	
 
 	ui.notes.on('click',function(e)
 	{
 		e.preventDefault();
-		$(this).closest('.block').find('.block__notes').addClass('showing');
+		$(this).closest('.block__meta').find('.meta__container').addClass('notes');
+	})
+
+	ui.links.on('click',function(e)
+	{
+		e.preventDefault();
+		$(this).closest('.block__meta').find('.meta__container').addClass('links');
 	})
 });

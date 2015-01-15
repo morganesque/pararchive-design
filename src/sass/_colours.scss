@@ -20,3 +20,13 @@ $brand-danger:          	#d9534f;
 
 // inuit.css var
 $brand-color:       $brand-primary!default;
+
+.bg-brand-primary {
+	background-color:$brand-primary;
+	color:white;
+}
+
+.bg-grey {
+	background-color:$grey;
+	color:white;
+}

@@ -1,11 +1,11 @@
-.reading {
-	margin-top:$bsu*2;
-}
+/*
+	Only within reading pages.
+*/		
+$block_media_width: 70%;
+$block_meta_width: 100% - $block_media_width;
+$block_min:$bsu*12;
 
-.reading__blocks {
-	position:relative;
-	width:62%;
-	margin:0 auto;
+.reading {
 
 	.block {
 		clear:both;
@@ -14,141 +14,154 @@
 		padding:$bsu*2 0;
 	}
 
-	.block__body {		
+	.block__body { // .grid
 		vertical-align:top;
+		min-height:$block_min;
 	}
 
 	.block__media { // .grid__item
-		width:80%;
+		width:$block_media_width;
+		z-index:0;
 	}
 
-	.tester {
-		width:20%;	
-		background:yellow
+	.block__meta {
+		
+		width:$block_meta_width;
+		z-index:1;
+		@extend .epsilon;			
+
+		.nav {
+			margin-bottom:0;
+
+			li {
+				padding:$bsu/2 0;
+				border-bottom:1px solid rgba(black,0.2);
+				// &:first-child {border:none;}
+				&:last-child {border:none;margin-bottom:0}
+			}
+		} 
 	}
+
+	.meta__container {
+		position:absolute;
+		top:0;right:100%;
+		width:100% * $block_media_width / $block_meta_width;
+		padding-left:$bsu;
+		overflow:hidden;
+		min-height:$block_min;
+		opacity:0;
+		transition:opacity 0.5s $easeOutQuint;
+
+		&.notes {
+			opacity:1;
+			.block__notes {transform:translate3d(0,$bsu,0);}
+			.block__noteactions {transform:translate3d(0,0,0);}			
+		}
+		&.links {
+			opacity:1;
+			.block__links {transform:translate3d(0,$bsu,0);}
+		}
+	}
+
+	.meta__link {
+		@extend .sans-face;
+
+		a {
+			display:block;				
+			font-weight:400;
+			color:$brand-primary;
+			text-decoration:none;
+		}
+	}
+
+	.meta__progress {color:rgba($brand-secondary,0.76);}
+
+	.meta__star {
+		font-size:24px;
+		.icon-star-on {color:$brand-primary}
+		.icon-star-off {color:rgba($grey,0.5)}
+	}	
 
 	.block__text {
-		font-size:1.5em;
 		@extend .serif-face;
 		@extend .gamma;
 		color:rgba($brand-secondary,0.76);
-		padding:0 $bsu;
+		padding:0;
 		line-height:1.3;
 		margin-top:$bsu;
 	}
-}
 
-
-
-.block__meta {
-	
-	// ////-----
-	// opacity:0;
-	// ////-----
-	display:inline-block;
-	@extend .epsilon;	
-	width:20%;
-	padding-left:$bsu;
-
-	li a {
-		display:block;				
-		font-weight:400;
-		color:$brand-primary;
-		text-decoration:none;
-	}
-
-	.progress {color:rgba($brand-secondary,0.76);}
-
-	.star-svg {
-		$s:30px;
-		width:$s;
-		padding-top:$s;
-		.star {
-			fill:$brand-primary;			
-		}
-	}
-
-	.showing {
-		.star-svg .star {
-			fill:$brand-primary;
-		}
-	}
-
-	.nav {
-		margin-bottom:0;
-	}
-	.nav li {
-		padding:$bsu/2 0;
-		border-bottom:1px solid rgba(black,0.2);
-		&:first-child {border:none;}
-		&:last-child {border:none;margin-bottom:0}
-	}
-}
-
-.meta__container {
-	position:absolute;
-	top:0;right:100%;
-	width:400%;
-	padding-left:$bsu;
-	overflow:hidden;
-}
-
-.block__notes {
-	padding:$bsu;
-	background-color:$grey-light;
-	transition:transform 0.5s $easeOutExpo;	
-	transform:translate3d(100%,0,0);
-	border-bottom:$bsu/4 solid $grey;
-
-	&.showing {
-		transform:translate3d(0,0,0);					
-	}
-
-	.buttons {
-		margin-bottom:$bsu;
-	}
-
-	.close {
+	.block__links, .block__notes {		
 		position:absolute;
-		top:$bsu;right:$bsu;
-		color:$brand-primary;
-	}
-
-	.cancel {
-		margin-left:$bsu*2;
+		top:0;left:0;
+		padding:$bsu;
+		width:100%;
+		background-color:$grey-light;
+		transition:transform 0.5s $easeOutExpo;	
+		transform:translate3d(104%,$bsu,0);	
 	}
 
 	.new-note {
 		width:100%;
 		height:6em;
 		margin-bottom:$bsu;
-	}
-}
+	}		
 
-.note {
-	@extend .zeta;
-	@extend .serif-face;
-	color:$grey;
-	margin-bottom:$bsu/2;
-
-	p {
-		margin-bottom:0;		
-	}
-
-	.note__author {
+	.close {
+		position:absolute;
+		top:$bsu;right:$bsu;
 		color:$brand-dark;
-		font-weight:bold;
+		&:hover {
+			color:$brand-primary;
+		}
+
 	}
 
-	.note__content {
-		line-height:1.2;
-	}
-}
+	.block__noteactions {			
+		z-index:1;
+		position:absolute;
+		left:$bsu;bottom:0;right:0;
+		background-color:$grey;
+		padding:$bsu/2 $bsu;
+		transition:transform 0.5s $easeOutExpo;	
+		transform:translate3d(104%,$bsu*3,0);
 
-.form-title {
-	@extend .delta;
-	@extend .sans-face;
-	font-weight:700;
-	color:$grey;
-	margin-bottom:$bsu/2;
+		.fader {
+			position:absolute;
+			top:0;left:0;
+			transform:translateY(-100%);
+			width:100%;
+			height:$bsu*4;
+			background:linear-gradient(rgba($grey-light,0),rgba($grey-light,1) 90%),
+		}			
+	}
+
+	.note {
+		@extend .zeta;
+		@extend .serif-face;
+		color:$grey;
+		margin-bottom:$bsu/2;
+
+		p {
+			margin-bottom:0;		
+		}
+
+		.note__author {
+			color:$brand-dark;
+			font-weight:bold;
+		}
+
+		.note__content {
+			line-height:1.2;
+		}
+	}
+
+	.form-title {
+		@extend .delta;
+		@extend .sans-face;
+		font-weight:700;
+		color:$grey;
+		margin-bottom:$bsu/2;
+	}
+
 }

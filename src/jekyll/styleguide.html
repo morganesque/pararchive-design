@@ -32,6 +32,7 @@ title: Styleguide
 		<pre><code>
 &lt;p class=&quot;sans-face&quot;&gt;Quicksand Normal, &lt;strong&gt;Quicksand Bold&lt;/strong&gt;&lt;/p&gt;
 &lt;p class=&quot;serif-face&quot;&gt;Halant Light, &lt;strong&gt;Halant Normal&lt;/strong&gt;&lt;/p&gt;
+&lt;p class=&quot;third-face&quot;&gt;Oswald (400)&lt;/p&gt;
 		</code></pre>
 		<div class="pattern__notes">These are Google fonts. <a href="https://www.google.com/fonts#ReviewPlace:refine/Collection:Quicksand|Halant|Oswald" target="_blank">Other weights</a> are available etc.</div>
 	</div>
@@ -89,6 +90,28 @@ title: Styleguide
 &lt;/ul&gt;	
 				</code></pre>
 			</div>
+			<div class="example">
+				<a href="#" class="link">basic link</a>
+				<pre><code>
+&lt;a href=&quot;#&quot; class=&quot;link&quot;&gt;basic link&lt;/a&gt;					
+				</code></pre>
+			</div>
+			<div class="example">
+				<div class="island bg-grey">
+					<a href="#" class="link link--reverse">reversed link</a>
+				</div>
+				<pre><code>
+&lt;a href=&quot;#&quot; class=&quot;link link--reverse&quot;&gt;basic link&lt;/a&gt;
+				</code></pre>
+			</div>
+
+			<div class="example">
+				<a href="#" class="link">basic link</a>
+				<a href="#" class="link float--right">link float right</a>
+				<pre style="clear:both"><code>
+&lt;a href=&quot;#&quot; class=&quot;link link--reverse&quot;&gt;basic link&lt;/a&gt;
+				</code></pre>
+			</div>
 		</div>
 	</div>	
 
@@ -107,7 +130,8 @@ title: Styleguide
 		<div class="icon-example"><span class="icon icon-spinner"></span><br />icon-spinner</div>
 		<div class="icon-example"><span class="icon icon-remove"></span><br />icon-remove</div>
 		<div class="icon-example"><span class="icon icon-menu"></span><br />icon-menu</div>
-		<div class="icon-example"><span class="icon icon-star"></span><br />icon-star</div>
+		<div class="icon-example"><span class="icon icon-star-off"></span><br />icon-star-off</div>
+		<div class="icon-example"><span class="icon icon-star-on"></span><br />icon-star-on</div>
 		<div class="icon-example"><span class="icon icon-close"></span><br />icon-close</div>
 		<div class="icon-example"><span class="icon icon-checkmark"></span><br />icon-checkmark</div>
 		<div class="icon-example"><span class="icon icon-minus"></span><br />icon-minus</div>
@@ -144,6 +168,34 @@ title: Styleguide
 	</div>
 
 	<div class="pattern">
+		<h1 class="pattern__title">Icons in circles?!?</h1>
+		<div class="icon-example"><span class="icon icon-minus icon--circle"></span><br />icon-minus</div>
+		<div class="icon-example"><span class="icon icon-plus icon--circle"></span><br />icon-plus</div>
+		<div class="icon-example"><span class="icon icon-close icon--circle"></span><br />icon-close</div>
+		<pre><code>
+&lt;div class=&quot;icon-example&quot;&gt;&lt;span class=&quot;icon icon-minus icon--circle&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-minus&lt;/div&gt;
+&lt;div class=&quot;icon-example&quot;&gt;&lt;span class=&quot;icon icon-plus icon--circle&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-plus&lt;/div&gt;
+&lt;div class=&quot;icon-example&quot;&gt;&lt;span class=&quot;icon icon-close icon--circle&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-close&lt;/div&gt;			
+		</code></pre>
+		<div class="pattern__notes">These icons can also be used within a circle by adding the icon--circle class.</div>
+	</div>
+
+	<div class="pattern">
+		<h1 class="pattern__title">Icons in circles reversed!?!</h1>
+		<div class="island bg-grey">
+		<div class="icon-example"><span class="icon icon-minus icon--circle icon--reverse"></span><br />icon-minus</div>
+		<div class="icon-example"><span class="icon icon-plus icon--circle icon--reverse"></span><br />icon-plus</div>
+		<div class="icon-example"><span class="icon icon-close icon--circle icon--reverse"></span><br />icon-close</div>
+		</div>
+		<pre><code>
+&lt;div class=&quot;icon-example&quot;&gt;&lt;span class=&quot;icon icon-minus icon--circle icon--reverse&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-minus&lt;/div&gt;
+&lt;div class=&quot;icon-example&quot;&gt;&lt;span class=&quot;icon icon-plus icon--circle icon--reverse&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-plus&lt;/div&gt;
+&lt;div class=&quot;icon-example&quot;&gt;&lt;span class=&quot;icon icon-close icon--circle icon--reverse&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-close&lt;/div&gt;
+		</code></pre>
+		<div class="pattern__notes">If using them on a dark background you can reverse the colours.</div>
+	</div>	
+
+	<div class="pattern">
 		<h1 class="pattern__title">Buttons</h1>
 		<div class="buttons">
 			<div class="example"> 
@@ -158,16 +210,66 @@ title: Styleguide
 
 	<div class="pattern">
 		<h1 class="pattern__title">Story Header</h1>
-		<header class="story__header">
-			<h1 class="story__name">lgbt*iq social history</h1>
-			<p class="story__byline">by <span class="author">Trevor Bayliss</span></p>
-		</header>
+		<div class="reading">
+			<header class="story__header">
+				<h1 class="story__name">lgbt*iq social history</h1>
+				<p class="story__byline">by <span class="author">Trevor Bayliss</span></p>
+			</header>
+		</div>
 		<pre><code>
-&lt;header class=&quot;story__header&quot;&gt;
-	&lt;h1 class=&quot;story__name&quot;&gt;lgbt*iq social history&lt;/h1&gt;
-	&lt;p class=&quot;story__byline&quot;&gt;by &lt;span class=&quot;author&quot;&gt;Trevor Bayliss&lt;/span&gt;&lt;/p&gt;
-&lt;/header&gt;			
+&lt;div class=&quot;reading&quot;&gt;
+	&lt;header class=&quot;story__header&quot;&gt;
+		&lt;h1 class=&quot;story__name&quot;&gt;lgbt*iq social history&lt;/h1&gt;
+		&lt;p class=&quot;story__byline&quot;&gt;by &lt;span class=&quot;author&quot;&gt;Trevor Bayliss&lt;/span&gt;&lt;/p&gt;
+	&lt;/header&gt;
+&lt;/div&gt;
 		</code></pre>
+		<div class="pattern__notes"> Only works within a div with the "reading" class. </div>
+	</div>
+
+	<div class="pattern">
+		<h1 class="pattern__title">Block Meta Data</h1>
+		<div class="reading pattern__reading">
+			<div class="block__meta">
+				<ul class="nav nav--stacked">
+					<li class="meta__link meta__star"><a href="#"><span class="icon icon-star-off"></span></a></li>
+					<li class="meta__link meta__notes"><a href="#"><span class="icon icon-plus"></span> add a note</a></li>
+					<li class="meta__link meta__links"><a href="#"><span class="icon icon-plus"></span> add a story link</a></li>
+					<li class="meta__link meta__places"><a href="#"><span class="icon icon-plus"></span> add a place</a></li>
+				</ul>	
+			</div>
+		</div>
+		<div class="reading pattern__reading">
+			<div class="block__meta">
+				<ul class="nav nav--stacked">
+					<li class="meta__link meta__star"><a href="#"><span class="icon icon-star-on"></span></a></li>
+					<li class="meta__link meta__notes"><a href="#">2 notes</a></li>
+					<li class="meta__link meta__links"><a href="#">3 story links</a></li>
+					<li class="meta__link meta__places"><a href="#">3 places</a></li>
+				</ul>	
+			</div>
+		</div>
+		<pre><code>
+&lt;div class=&quot;reading&quot;&gt;
+	&lt;div class=&quot;block__meta&quot;&gt;
+		&lt;ul class=&quot;nav nav--stacked&quot;&gt;
+			&lt;li class=&quot;meta__link meta__star&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;icon icon-star-off&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;meta__link meta__notes&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;icon icon-plus&quot;&gt;&lt;/span&gt; add a note&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;meta__link meta__links&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;icon icon-plus&quot;&gt;&lt;/span&gt; add a story link&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;meta__link meta__places&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;icon icon-plus&quot;&gt;&lt;/span&gt; add a place&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;	
+	&lt;/div&gt;
+	&lt;div class=&quot;block__meta&quot;&gt;
+		&lt;ul class=&quot;nav nav--stacked&quot;&gt;
+			&lt;li class=&quot;meta__link meta__star&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;icon icon-star-on&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;meta__link meta__notes&quot;&gt;&lt;a href=&quot;#&quot;&gt;2 notes&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;meta__link meta__links&quot;&gt;&lt;a href=&quot;#&quot;&gt;3 story links&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;meta__link meta__places&quot;&gt;&lt;a href=&quot;#&quot;&gt;3 places&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;	
+	&lt;/div&gt;
+&lt;/div&gt;			
+		</code></pre>
+		<div class="pattern__notes"> Only works within a div with the "reading" class. </div>
 	</div>
 
 </div><!-- .main -->
