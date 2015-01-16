@@ -89,7 +89,6 @@ $block_min:$bsu*12;
 		color:rgba($brand-secondary,0.76);
 		padding:0;
 		line-height:1.3;
-		margin-top:$bsu;
 	}
 
 	.block__links, .block__notes {		
@@ -163,6 +162,31 @@ $block_min:$bsu*12;
 		font-weight:700;
 		color:$grey;
 		margin-bottom:$bsu/2;
+	}
+
+	.block__item {
+
+		img {display:block;}
+
+		.item__details {
+			// position:relative;
+			// top:-$bsu*2;
+			// background-color:rgba($grey-light,0.9);		
+			background-color:rgba($grey-light,1);		
+			overflow:hidden;
+			max-height:$bsu*2;
+			transition:max-height 1s $easeOutQuint;
+			margin-bottom:$bsu;
+
+			&.showing {
+				max-height:200px;
+			}
+		}
+
+		.item__description {
+			margin-top:$bsu*3/4;
+			@extend .epsilon;
+		}
 	}
 
 }
