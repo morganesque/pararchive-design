@@ -19,7 +19,7 @@ $block_min:$bsu*12;
 		min-height:$block_min;
 	}
 
-	.block__media { // .grid__item
+	.block__content { // .grid__item
 		width:$block_media_width;
 		z-index:0;
 	}
@@ -43,6 +43,7 @@ $block_min:$bsu*12;
 	}
 
 	.meta__container {
+
 		position:absolute;
 		top:0;right:100%;
 		width:100% * $block_media_width / $block_meta_width;
@@ -120,7 +121,7 @@ $block_min:$bsu*12;
 	.block__noteactions {			
 		z-index:1;
 		position:absolute;
-		left:$bsu;bottom:0;right:0;
+		left:0;bottom:0;right:0;
 		background-color:$grey;
 		padding:$bsu/2 $bsu;
 		transition:transform 0.5s $easeOutExpo;	
