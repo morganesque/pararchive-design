@@ -18,43 +18,31 @@ $(window).on("load",function(e)
 		updateOnScroll:function(a,b,c)
 		{
 			if (this.animating) return;
-
 			this.current = a.target.number;
-			// this.updateNavs();
 		},
 
-		// updateNavs:function()
+		// prevClick:function(e)
 		// {
-		// 	if (this.current == -1) ui.prev.css({"opacity":0.2});
-		// 	else ui.prev.css({"opacity":1});
-
-		// 	if (this.current == ui.blocks.length-1) ui.next.css({"opacity":0.2});
-		// 	else ui.next.css({"opacity":1});
+		// 	e.preventDefault();
+		// 	if (this.current >= 0) 
+		// 	{
+		// 		this.current--;
+		// 		this.showBlock();
+		// 	}
 		// },
 
-		prevClick:function(e)
-		{
-			e.preventDefault();
-			if (this.current >= 0) 
-			{
-				this.current--;
-				this.showBlock();
-			}
-		},
-
-		nextClick:function(e)
-		{
-			e.preventDefault();
-			if (this.current < ui.blocks.length-1) 
-			{
-				this.current++;
-				this.showBlock();
-			}
-		},
+		// nextClick:function(e)
+		// {
+		// 	e.preventDefault();
+		// 	if (this.current < ui.blocks.length-1) 
+		// 	{
+		// 		this.current++;
+		// 		this.showBlock();
+		// 	}
+		// },
 
 		showBlock:function()
 		{
-			console.log(this.current);		
 			this.animating = true;
 			if (this.current < 0)
 			{
@@ -77,25 +65,38 @@ $(window).on("load",function(e)
 		},
 	};
 
-	ui.blocks.each(function(a,b)
+
+	/*
+		Only for 640 and up.
+	*/		
+	if ( Modernizr.mq('only screen and (min-width: 40em)') )
 	{
-		var body = $(b).find('.block__body');
-		var meta = $(b).find('.block__meta');		
-		var bh = $(body).outerHeight();
-		var mh = $(meta).outerHeight();
+		/*
+			Create the sticky side panels for each block.
+		*/		
+		ui.blocks.each(function(a,b)
+		{
+			var body = $(b).find('.block__body');
+			var meta = $(b).find('.block__meta');		
+			var bh = $(body).outerHeight();
+			var mh = $(meta).outerHeight();
 
-		var o = new ScrollScene({
-				triggerElement: body, 
-				duration: bh-mh,
-				triggerHook:0,
-				offset:-offset,
-			})
-			.on('enter', _.bind(navigation.updateOnScroll,navigation))
-			.setPin(meta[0],{pushFollowers:false})
-			.addTo(controller);
+			var ww = $(window).width();
 
-		o.number = a;
-	});	
+			var o = new ScrollScene({
+					triggerElement: body, 
+					duration: bh-mh,
+					triggerHook:0,
+					offset:-offset,
+				})
+				.on('enter', _.bind(navigation.updateOnScroll,navigation))
+				.setPin(meta[0],{pushFollowers:false})
+				.addTo(controller);
+
+			o.number = a;
+		});	
+	}
+
 
 	// ui.prev.on('click',_.bind(navigation.prevClick,navigation));
 	// ui.next.on('click',_.bind(navigation.nextClick,navigation));

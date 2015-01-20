@@ -88,21 +88,24 @@
     background-color: $grey-light;
 }
 
-.block-list--full {
-
+.block-list--sans {
     border:none;
-    
-    .block-list__link {
-        font-weight:400;
-        padding-left:0;    
-        line-height:1.2;    
-    }
-
-    &>li {
-        border-color:rgba(white,0.22);
-    }
-
-    li:last-child {
-        border:none;
-    }
+    li:last-child {border:none;}
 }
+
+//     border:none;
+    
+.block-list__link {
+    font-weight:400;
+    padding-left:0;    
+    line-height:1.2;    
+}
+
+//     &>li {
+//         border-color:rgba(white,0.22);
+//     }
+
+//     li:last-child {
+//         border:none;
+//     }
+// }
