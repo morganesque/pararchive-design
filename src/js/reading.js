@@ -163,4 +163,17 @@ $(window).on("load",function(e)
 		$(this).find('.icon').toggleClass('icon-star-on');
 		$(this).find('.icon').toggleClass('icon-star-off');
 	});
+
+	$('.fancybox').fancybox({
+		padding:0,
+		helpers : {
+	        overlay : {locked:false},
+	    },
+	    afterShow:function()
+        {
+        	var close = $('.fancybox-close');
+        	console.log(close);		
+        	$('.fancybox-close').append('<span class="icon icon-close icon--circle icon--reverse"></span>');
+        }
+	});
 });

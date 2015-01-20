@@ -9,21 +9,11 @@ title: Home
 <section class="reading">
 
 	<header class="story__header">
-		<h1 class="story__name">lgbt*iq social history</h1>
-		<p class="story__byline">by <span class="author">Trevor Bayliss</span></p>
+		<div class="centered">
+			<h1 class="story__name">lgbt*iq social history</h1>
+			<p class="story__byline">by <span class="author">Trevor Bayliss</span></p>
+		</div>
 	</header>
-
-	<!-- previous and next navigation buttons -->
-	{% comment %}
-	<div class="reading__nav">
-		<div class="prev">
-			<a href="#" class="container">{% include img/left-arrow.svg %}</a>
-		</div>
-		<div class="next">
-			<a href="#" class="container">{% include img/right-arrow.svg %}</a>
-		</div>
-	</div>
-	{% endcomment %}
 
 	<!-- Actual story blocks -->
 	<div class="reading__blocks">		
@@ -59,10 +49,14 @@ title: Home
 			<div class="block__body grid">
 				<div class="block__content grid__item">					
 					<div class="block__item">
-						<img src="http://www.gayleeds.com/photo/_scale/_9f42/_232/_25816_850-600.jpg" width="100%" />
+						<a href="http://www.gayleeds.com/photo/_scale/_9f42/_232/_25816_850-600.jpg" class="fancybox" rel="group"><img src="http://www.gayleeds.com/photo/_scale/_9f42/_232/_25816_850-600.jpg" width="100%" /></a>
 						{% include components/item-details.html %}
 					</div>
 					<p class="block__text">A bunch of queers in the seventies? Do you know any of these people?</p>					
+					<div class="block__item">
+						<a href="http://upload.wikimedia.org/wikipedia/commons/9/95/Big_Pine_landscape.jpg" class="fancybox" rel="group"><img src="http://upload.wikimedia.org/wikipedia/commons/9/95/Big_Pine_landscape.jpg" width="100%" /></a>
+						{% include components/item-details.html %}
+					</div>
 				</div><div class="block__meta grid__item">
 					<div class="meta__container">
 						{% include components/block-links.html %}
@@ -76,8 +70,32 @@ title: Home
 		<div class="block">				
 			<div class="block__body grid">
 				<div class="block__content grid__item">
+					<div class="block__item item-story">
+						<div class="item-story__content">
+						<span class="icon icon-quotes-left"></span>
+						I have fond memories of the queer scene in Leeds, back in the 1970s. Mauris tempus risus eu libero blandit imperdiet. Vestibulum lacinia nisl odio, quis ullamcorper ipsum tempor quis. Proin vulputate erat vitae justo auctor varius. Nam varius.
+						<span class="icon icon-quotes-right"></span>
+						</div>							
+						<div class="item-story__thumb" style="background-image:url(http://www.gayleeds.com/photo/_scale/_9f42/_232/_25816_850-600.jpg);"></div><!--
+						--><div class="item-story__thumb" style="background-image:url(https://farm2.staticflickr.com/1142/1093616383_21232e81f1.jpg);"></div>
+						<div class="item-story__details">From <a href="#">It's Curtains For You!</a> by <a href="#">Dean Vipond</a></div>
+					</div>
+					<p class="block__text">I saw someone in this other story talking about it too.</p>					
+				</div><div class="block__meta grid__item">
+					<div class="meta__container">
+						{% include components/block-links.html %}
+						{% include components/block-notes-notes.html %}						
+					</div>
+					{% include components/meta-links-full.html num=3 %}
+				</div>
+			</div>
+		</div>
+		<!-- - - - - - - - - - - - - - - - - - - - -  BLOCK - - - - - - - - - - - - - - - - - - - - - - - -  -->
+		<div class="block">				
+			<div class="block__body grid">
+				<div class="block__content grid__item">
 					<div class="block__item">
-						<img src="https://farm2.staticflickr.com/1142/1093616383_21232e81f1.jpg" width="100%" />
+						<a href="https://farm2.staticflickr.com/1142/1093616383_21232e81f1.jpg" class="fancybox" rel="group"><img src="https://farm2.staticflickr.com/1142/1093616383_21232e81f1.jpg" width="100%" /></a>
 						{% include components/item-details.html %}
 					</div>
 					<p class="block__text">Pride now, on the Headrow</p>
@@ -95,7 +113,7 @@ title: Home
 			<div class="block__body grid">
 				<div class="block__content grid__item">
 					<div class="block__item">
-						<img src="https://farm6.staticflickr.com/5098/5565118356_b4d4c5cfbb_b.jpg" width="100%" />	
+						<a href="https://farm6.staticflickr.com/5098/5565118356_b4d4c5cfbb_b.jpg" class="fancybox" rel="group"><img src="https://farm6.staticflickr.com/5098/5565118356_b4d4c5cfbb_b.jpg" width="100%" /></a>	
 						{% include components/item-details.html %}
 					</div>					
 					<p class="block__text">The new Penny used to be called the Hope and Anchor but we used to call it the Grope and Wanker</p>
@@ -113,7 +131,7 @@ title: Home
 			<div class="block__body grid">
 				<div class="block__content grid__item">
 					<div class="block__item">
-						<img src="http://www.c-h-e.org.uk/images/Allan_Horsfall_with_paper.jpg" width="100%" />	
+						<a href="http://www.c-h-e.org.uk/images/Allan_Horsfall_with_paper.jpg" class="fancybox" rel="group"><img src="http://www.c-h-e.org.uk/images/Allan_Horsfall_with_paper.jpg" width="100%" /></a>
 						{% include components/item-details.html %}
 					</div>
 					<p class="block__text">The death of Allan Horsfall last week [27 August 2012] in Bolton marks the end of an era. He was the last surviving Founding Father of the modern LGBT Rights Movement. In 1964, from his miner&rsquo;s cottage in Atherton, Greater Manchester, he announced the formation of the North West Committee for Homosexual Law Reform (NWCHLR), which mutated into the Committee for Homosexual Equality in 1969, and the Campaign for Homosexual Equality (CHE) in 1971. CHE at its height in the mid 1970s boasted over 130 local groups all over England and Wales, and a membership in excess of 5,000 lesbians and gay men. It was the most successful attempt ever in this country to create a mass membership democratic LGBT organisation. And if its legislative gains were small, it changed the lives of thousands of individuals through its groups, encouraging self-respect and self-confidence through &lsquo;coming out&rsquo;. It also made grass roots gains in changing the attitudes of police, social workers, doctors and teachers to whom it gave talks and distributed information. Indirectly it contributed to the foundation of several other important institutions &ndash; LGBT Switchboard, the counselling organisation Friend, the first national gay paper Gay News, Gay Sweatshop Theatre Group and the International Lesbian and Gay Association (ILGA).</p>
@@ -131,7 +149,7 @@ title: Home
 			<div class="block__body grid">
 				<div class="block__content grid__item">
 					<div class="block__item">
-						<img src="http://outrage.org.uk/wp-content/uploads/2010/05/bolton7supporters.jpg" width="100%" />
+						<a href="http://outrage.org.uk/wp-content/uploads/2010/05/bolton7supporters.jpg" class="fancybox" rel="group"><img src="http://outrage.org.uk/wp-content/uploads/2010/05/bolton7supporters.jpg" width="100%" /></a>
 						{% include components/item-details.html %}	
 					</div>
 					
@@ -145,7 +163,6 @@ title: Home
 				</div>				
 			</div>
 		</div>
-
 	</div><!-- .reading__blocks -->
 
 </section><!-- .reading -->
