@@ -21,6 +21,7 @@ body {height:100%}
 	svg {position:absolute;top:0;left:0;}
 }
 
+.centered,
 .reading .reading__blocks {
 	position:relative;	
 	margin:0 auto;
@@ -28,5 +29,5 @@ body {height:100%}
 	max-width:960px;
 	@include aboveOr(pem(640)) {width:84%;}
 	@include aboveOr(pem(1024)) {width:76%;}
-	@include aboveOr(pem(1280)) {width:62%;}
+	// @include aboveOr(pem(1280)) {width:62%;}
 }
