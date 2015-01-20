@@ -1,8 +1,15 @@
-<a href="/flats/" class="header__logo">Pararchive</a>
+<div class="centered">
 
-<ul class="header__identity nav">	
-	<li><span class="username">{% if page.username %} {{ page.username }} {% else %} Dean Vipond {% endif %}</span></li>	
-	<li><a class="my-stories" href="#">My stories</a></li>
-	<li><a class="library" href="#">Library</a></li>
-	<li><a class="logout" href="#">Sign out</a></li>
-</ul>
+	<a href="/flats/" class="header__logo">
+		<div class="logo-icon">{% include img/yarn-logo-icon.svg %}</div>
+		Yarn
+	</a>
+
+	<ul class="header__identity nav">	
+		<li><span class="username">{% if page.username %} {{ page.username }} {% else %} Dean Vipond {% endif %}</span></li>	
+		<li><a class="my-stories" href="#">My stories</a></li>
+		<li><a class="library" href="#">Library</a></li>
+		<li><a class="logout" href="#">Sign out</a></li>
+	</ul>
+	
+</div>
