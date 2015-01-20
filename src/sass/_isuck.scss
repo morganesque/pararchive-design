@@ -7,22 +7,7 @@
     comprehensively and commemoratively suck!
 */
 
-hr {
-    &.center {
-        margin: 0 auto;
-    }
-    &.half {
-        width: 50%;
-    }
-    &.quart {
-        width: 25%;
-    }
-}
 
-a {
-    text-decoration: none;
-    color: $brand-dark;
-}
 
 .link {
     @extend .sans-face;
@@ -31,11 +16,7 @@ a {
 
     &.link--reverse {
         color:white;
-    }
-
-    &:hover {
-        color:$brand-primary;
-    }
+    }    
 }
 
 
@@ -73,6 +54,10 @@ a {
 .island--half {
     padding:$bsu/2;
 }
+.island--end {
+    padding-bottom:0;
+}
+
 .p--half {
     margin-bottom:$bsu/2;
 }
@@ -99,6 +84,23 @@ a {
     background-color:white;
 }
 
+.icon-star-on {color:$brand-primary}
+.icon-star-off {color:rgba($grey,0.5)}
+
 .table--striped tbody tr:nth-of-type(odd) {
     background-color: $grey-light;
+}
+
+.block-list--full {
+
+    border:none;
+    
+    .block-list__link {
+        font-weight:400;
+        padding-left:0;        
+    }
+
+    li:last-child {
+        border:none;
+    }
 }

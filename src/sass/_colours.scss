@@ -1,5 +1,7 @@
-$brand-dark:				#217D7C;
+// $brand-dark:				#217D7C;
 $brand-primary:         	#26b9b9;
+$brand-dark:				darken($brand-primary,10%);
+
 $brand-secondary:			#5e6375;
 $brand-tertiary:			#a61520;
 
@@ -29,4 +31,8 @@ $brand-color:       $brand-primary!default;
 .bg-grey {
 	background-color:$grey;
 	color:white;
+}
+
+.bg-grey-light {
+	background-color:$grey-light;
 }

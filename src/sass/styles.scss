@@ -12,30 +12,23 @@ $bsu:$base-spacing-unit; // shorthand.
 @import "components/buttons";
 
 /*
-	Done for the reading interface.
+	Specific page components
 */		
 @import "components/reading-story";
 @import "components/reading-blocks";
-
-/*
-	Done for the library.
-*/		
+@import "components/block-item";
+@import "components/item-story";
+@import "components/block-page";
 @import "components/library";
-
-/*
-	Done for the library.
-*/		
 @import "components/artefact";
-
-/*
-	Done for Archive Partner
-*/		
 @import "components/archive-partner";
+
 
 /*
 	Stuff for the styleguide - don't really need to include this is final styles.
 */		
 @import "components/styleguide";
+
 
 
 /*
@@ -61,3 +54,8 @@ $grid-gutter-width:         16px !default;
 */
 
 @import "isuck";
+
+/*
+	Stuff for fancybox.	
+*/		
+@import "components/fancybox";
