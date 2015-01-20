@@ -1,0 +1,17 @@
+.block-page {
+
+	.block-page__stats {
+		text-align:center;
+		.stat {
+			display:inline-block;
+			line-height:1;
+			margin-right:$bsu;
+			margin-bottom:$bsu*2;
+			text-align:center;
+		}
+	}
+
+}
+
+.block-page__left {width:62%;}
+.block-page__right {width:38%;}
