@@ -31,6 +31,8 @@
 		position:relative;
 		top:0.1em;
 	}
+
+	.reverse & {color:rgba(white, 0.96);}
 }
 
 .sub-header {
@@ -39,11 +41,17 @@
 	font-weight:700;
 	border-bottom:4px solid $grey-blue;
 	text-transform:uppercase;	
-	// padding-bottom:$bsu/2;
+	padding-bottom:$bsu/4;
 
 	.text--circle {
 		position:relative;
 		top:-2px;
+	}
+
+	.reverse & {
+		font-weight:400;
+		color:rgba(white, 0.76);
+		border-bottom:$bsu/12 solid $brand-primary;
 	}
 }
 
@@ -68,6 +76,11 @@ hr {
 a {
     text-decoration: none;
     color: $brand-dark;
+
+	.reverse & {
+    	color:rgba(white, 0.76);
+    }
+
     &:hover {
         color:$brand-primary;
     }

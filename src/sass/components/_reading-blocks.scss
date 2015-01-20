@@ -73,8 +73,15 @@ $block_min:$bsu*12;
 		a {
 			display:block;				
 			font-weight:700;
-			color:$brand-primary;
 			text-decoration:none;
+			// transition:color 0.5s $easeOutQuint;
+			// .icon {
+			// 	background:$brand-dark;
+			// 	transition:background-color 0.5s $easeOutQuint;
+			// }
+			// &:hover {
+			// 	.icon {background-color:$brand-primary;}
+			// }
 		}
 	}
 

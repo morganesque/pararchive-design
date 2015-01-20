@@ -19,10 +19,21 @@
 	// margin-left:$bsu;	
 	font-size:$bsu;
 	color:white;
+	transition:color 0.5s $easeOutQuint;
+
+	.down-loop,
+	.up-loop,
+	.tile {
+		transition:fill 0.75s $easeOutQuint;
+	}
 
 	&:hover {
 		text-decoration:none;
 		color:$brand-primary;
+
+		.down-loop,
+		.up-loop {fill:white;}
+		.tile {fill:$brand-primary;}
 	}
 }
 

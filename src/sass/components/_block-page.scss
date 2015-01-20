@@ -1,12 +1,14 @@
 .block-page {
 
 	.block-page__stats {
+
 		text-align:center;
+
 		.stat {
 			display:inline-block;
 			line-height:1;
 			margin-right:$bsu;
-			margin-bottom:$bsu*2;
+			margin-bottom:$bsu;
 			text-align:center;
 		}
 	}

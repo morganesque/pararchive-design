@@ -61,9 +61,6 @@
 .p--half {
     margin-bottom:$bsu/2;
 }
-.p--none {
-    margin-bottom:0;
-}
 
 .icon-right {
     float: right;
@@ -97,7 +94,12 @@
     
     .block-list__link {
         font-weight:400;
-        padding-left:0;        
+        padding-left:0;    
+        line-height:1.2;    
+    }
+
+    &>li {
+        border-color:rgba(white,0.22);
     }
 
     li:last-child {
