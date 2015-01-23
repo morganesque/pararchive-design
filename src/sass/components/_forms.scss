@@ -1,0 +1,27 @@
+.form-fields {
+
+	label {
+		@extend .delta;
+		@extend .sans-face;
+		font-weight:700;
+		margin-bottom:$bsu/4;	
+	}
+
+	input,
+	textarea {
+		@extend .delta;
+		padding:$bsu/4;
+		width:62%;
+		border:1px solid rgba($grey-blue,1);
+		background-color:rgba($grey-blue,0.22);
+		&:focus {
+			outline:none;
+			background-color:white;
+
+		}
+	}
+
+	textarea {
+		height:$bsu*10;
+	}
+}

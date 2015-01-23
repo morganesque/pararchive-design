@@ -10,10 +10,7 @@ $bsu:$base-spacing-unit; // shorthand.
 @import "typography";
 @import "components/header";
 @import "components/buttons";
-
-/*
-	Specific page components
-*/		
+@import "components/forms";
 @import "components/reading-story";
 @import "components/reading-blocks";
 @import "components/block-item";
@@ -22,6 +19,7 @@ $bsu:$base-spacing-unit; // shorthand.
 @import "components/library";
 @import "components/artefact";
 @import "components/archive-partner";
+@import "components/edit";
 
 
 /*

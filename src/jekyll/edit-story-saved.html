@@ -1,0 +1,52 @@
+---
+layout: default
+title: Edit Story Page
+---
+<header class="header cf">
+        {% include header.html %}
+</header>
+
+<div class="centered">
+
+	<header class="page-header">
+		<div class="float--right page-header--buttons">
+			<a href="#" class="link">Preview story</a>&nbsp;&nbsp;&nbsp;
+			<a href="#" class="button">PUBLISH</a>
+		</div>
+		<h1 class="section-header">Make a new story</h1>
+		<hr class="rule"/>
+	</header>
+	
+	<div class="edit-story">
+		<div class="message">1. Give your story a title and a brief description</div>
+		<ul class="form-fields">
+			<li>
+				<label>Story title</label>
+				<input/>
+			</li>
+			<li>
+				<label class="input-label">Story description</label>
+				<textarea></textarea>
+			</li>
+		</ul>
+
+		<br />
+		<hr class="rule" />
+
+		<div class="message">2. Write the first passage of your story.</div>
+
+		<div class="edit-story__block">
+			<div class="block__thumbnail"></div>
+			<p>The man, let's call him 'Peter' to protect his identity opened&hellip;</p>
+			<hr class="rule" />
+			<p><a href="#">1 item</a> • <a href="#">3 notes</a></p>
+		</div>
+
+		<a href="#" class="edit-story__block edit-story__block--new">
+			<p class="push-half--bottom"><span class="icon icon-plus icon--circle"></span></p>
+			<p class="action">New Passage</p>
+		</a>
+	
+	</div><!-- .artefact -->
+
+</div><!-- #main -->

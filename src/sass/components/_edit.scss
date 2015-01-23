@@ -1,0 +1,28 @@
+.edit-story__block {
+	display:block;
+	width:200px;
+	min-height:300px;
+	background-color:$grey-light;
+	p {
+		margin:$bsu/2;
+	}
+}
+
+.edit-story__block--new {
+
+	padding-top:$bsu*4;
+	text-align:center;
+	transition:background-color 0.5s $easeOutQuint;
+	border:1px solid $grey-light;
+
+	&:hover {
+		background-color:rgba($grey-light,0.42);
+
+		.icon {
+			transition:all 0.5s $easeOutQuint;
+			transition-delay:0.2s;
+			background-color:white;
+			color:$brand-primary;
+		}
+	}
+}

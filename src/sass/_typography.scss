@@ -1,3 +1,33 @@
+body {
+	@extend .serif-face;
+	font-weight:300;
+	color:$grey;
+}
+
+hr {
+    &.center {
+        margin: 0 auto;
+    }
+    &.half {
+        width: 50%;
+    }
+    &.quart {
+        width: 25%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $brand-dark;
+
+	.reverse & {
+    	color:rgba(white, 0.76);
+    }
+
+    &:hover {
+        color:$brand-primary;
+    }
+}
 
 .sans-face {
 	font-family:$font-family-sans-serif;
@@ -55,35 +85,13 @@
 	}
 }
 
-body {
-	@extend .serif-face;
-	font-weight:300;
-	color:$grey;
-}
-
-hr {
-    &.center {
-        margin: 0 auto;
-    }
-    &.half {
-        width: 50%;
-    }
-    &.quart {
-        width: 25%;
-    }
-}
-
-a {
-    text-decoration: none;
-    color: $brand-dark;
-
-	.reverse & {
-    	color:rgba(white, 0.76);
-    }
-
-    &:hover {
-        color:$brand-primary;
-    }
+.message {
+	@extend .epsilon;
+	background-color:$brand-primary;
+	color:white;
+	padding:$bsu/2;
+	text-shadow:0 2px 1px rgba(black,0.42);
+	margin-bottom:$bsu/2;
 }
 
 .text--circle {
