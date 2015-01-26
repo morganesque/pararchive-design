@@ -30,4 +30,5 @@ body {height:100%}
 	@include aboveOr(pem(640)) {width:84%;}
 	@include aboveOr(pem(1024)) {width:76%;}
 	// @include aboveOr(pem(1280)) {width:62%;}
+	margin-bottom:$bsu*2;
 }

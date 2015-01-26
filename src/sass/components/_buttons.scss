@@ -21,6 +21,11 @@
         box-shadow: 0 1px 1px rgba(black,.22);
     }
 
+    &.medium {
+        @extend .delta;
+        padding:$bsu/3 $bsu;
+    }
+
     &.large {
         @extend .gamma;
         padding:$bsu/2 $bsu*2;

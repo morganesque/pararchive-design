@@ -54,11 +54,6 @@
 
 .block-thumb__actions {
 	background-color:$grey-blue;
-	padding:$bsu/2;
+	padding:$bsu/4 $bsu/2;
 	line-height:0.8;
-	.nav {		
-		margin:0;
-		li a {&:after {content:"\0020\2022\0020";color:$grey;}}
-		li:last-child a {&:after{content:none;}}
-	}
 }

@@ -85,13 +85,34 @@ a {
 	}
 }
 
+.form-title {
+	@extend .delta;
+	@extend .sans-face;
+	font-weight:700;
+	margin-bottom:$bsu/4;	
+}
+
 .message {
+	position:relative;
 	@extend .epsilon;
 	background-color:$brand-primary;
 	color:white;
 	padding:$bsu/2;
+	padding-right:$bsu*2;
 	text-shadow:0 2px 1px rgba(black,0.42);
 	margin-bottom:$bsu/2;
+
+
+	.close {
+		position:absolute;
+		color:white;
+		text-shadow:none;
+		top:$bsu/2;right:$bsu/2;
+		transition:color 0.5s $easeOutQuint;
+		&:hover {
+			color:$brand-dark;
+		}
+	}
 }
 
 .text--circle {
@@ -122,4 +143,13 @@ a {
 		border-radius:$size;
 		font-weight:300;
 	}
+}
+
+.nav.actions {	
+	clear:both;	
+	margin:0;
+	padding:$bsu/3 0;
+	@extend .zeta;
+	li a {&:after {content:"\0020\2022";color:$grey;margin:0 0.42em}}
+	li:last-child a {&:after{content:none;}}
 }

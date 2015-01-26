@@ -18,7 +18,7 @@ title: Edit Story Page
 	</header>
 	
 	<div class="edit-story">
-		<div class="message">Great! You have ade your first passage. Add more to complete your story. Preview your story to see what it will look like, and publish it when you are ready.</div>
+		<div class="message">Great! You have ade your first passage. Add more to complete your story. Preview your story to see what it will look like, and publish it when you are ready.<a href="#" class="close"><span class="icon icon-close"></span></a></div>
 
 		<h1 class="push-half--bottom">The Pelmet Conspiracy</h1>
 		<p class="delta push-half--bottom">Mauris tempus risus eu libero blandit imperdiet. Vestibulum lacinia nisl odio, quis ullamcorper ipsum tempor quis. Proin vulputate erat vitae justo auctor varius. Nam varius.</p>
@@ -26,7 +26,7 @@ title: Edit Story Page
 
 		<hr class="rule" />
 
-		<h2 class="sub-header">Your story has 2 passages</h2>
+		<h2 class="form-title">Your story has 2 passages</h2>
 
 		<div class="block-thumb-group grid">
 
@@ -40,7 +40,7 @@ title: Edit Story Page
 						<p class="block-thumb__meta">1 item &bull; 3 notes</p>
 					</div>
 					<div class="block-thumb__actions">
-						<ul class="nav">
+						<ul class="nav actions">
 							<li><a href="#" class="link action">edit</a></li>
 							<li><a href="#" class="link action">delete</a></li>
 						</ul>
@@ -57,7 +57,7 @@ title: Edit Story Page
 						<p class="block-thumb__meta">1 item &bull; 3 notes</p>
 					</div>
 					<div class="block-thumb__actions">
-						<ul class="nav">
+						<ul class="nav actions">
 							<li><a href="#" class="link action">edit</a></li>
 							<li><a href="#" class="link action">delete</a></li>
 						</ul>
@@ -85,3 +85,14 @@ title: Edit Story Page
 	</div><!-- .edit-story -->
 
 </div><!-- .centered -->
+
+<script type="text/javascript">
+	$(document).on("ready",function(e)
+	{
+		$('.message .close').on("click",function(e)
+		{
+			e.preventDefault();
+			$(this).closest('.message').slideUp(500);
+		});
+	});
+</script>
