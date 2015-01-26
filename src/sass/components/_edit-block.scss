@@ -8,7 +8,8 @@
 .edit-block__item {
 
 	margin-top:$bsu/2;
-	margin-bottom:0;
+	margin-bottom:$bsu;
+	&:last-child {margin-bottom:0;}
 	border-bottom:1px solid rgba($grey,0.42);
 
 	.media__img {
@@ -29,5 +30,9 @@
 			@extend .epsilon;
 			line-height:1.2;			
 		}
+	}
+
+	.actions {
+		padding:$bsu/4 0;
 	}
 }

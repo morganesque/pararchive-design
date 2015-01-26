@@ -1,52 +1,38 @@
 .artefact {
-    .left {
-        width: 62%;
+    .left {width: 62%;}
+    .right {width: 38%;}
+}
+
+.artefact__media {
+    width: 100%;
+    height: 0;
+    padding-top: 62%;
+    background-color: $grey-blue;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.artefact__desc {
+    padding: $bsu/2 $bsu/2;
+    background-color: $grey-light;
+    a {
+        font-weight: 700;
     }
-    .right {
-        width: 38%;
-    }
-    .my-media {
-        width: 100%;
-        height: 0;
-        padding-top: 62%;
-        background-color: $grey-blue;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: contain;
-    }
-    .my-desc {
-        padding: $bsu/2 $bsu/2;
-        background-color: $grey-light;
-        a {
-            font-weight: 700;
-        }
-    }
-    .my-action {
-    	border-bottom:2px solid $grey-light;
-    	padding-bottom:$bsu;
-    	margin-bottom:$bsu;
-    }
-    .my-details {
-    	border-bottom:2px solid $grey-light;
-    	margin-bottom:$bsu;
-    	h3 {
-    		color:$brand-secondary;
-    		@extend .epsilon;
-    		margin-bottom:$bsu/2;
-    		font-weight:400;    		
-    	}
-    }
-    .my-appear {
-    	
-    	h4 {
-    		color:$brand-dark;
-    		@extend .epsilon;
-    		margin-bottom:0;
-    	}
-    	p {
-    		color:$brand-secondary;
-    		@extend .zeta;
-    		line-height:1.3;
-    	}
+}
+
+.artefact__action {
+    border-bottom:2px solid $grey-light;
+    margin-bottom:$bsu;
+}
+
+.artefact__details {
+    border-bottom:2px solid $grey-light;
+    margin-bottom:$bsu;
+    h3 {
+        color:$brand-secondary;
+        @extend .epsilon;
+        margin-bottom:$bsu/2;
+        font-weight:400;            
     }
 }

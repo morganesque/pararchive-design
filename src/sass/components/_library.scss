@@ -65,16 +65,6 @@
 	}
 	&:hover .my-image {background-size:105%;filter:saturate(1);}
 
-	.my-label {
-		position: absolute;
-		top:0;left:0;
-		background-color:$brand-secondary;
-		color:white;
-		padding:0.25em 0.5em;
-		font-size:$milli-size;
-		text-transform:uppercase;
-	}
-
 	.my-desc {
 		padding:$bsu/2;
 		@extend .serif-face;		
@@ -82,14 +72,14 @@
 	}
 
 	.my-actions {		
-		a {
-			display:block;
-			background-color:$grey-blue;		
-			padding:$bsu/4 $bsu/2;
-			font-weight:700;
-			color:$brand-dark;
-			text-decoration:none;
-		}
+		// a {
+		// 	display:block;
+		// 	background-color:$grey-blue;		
+		// 	padding:$bsu/4 $bsu/2;
+		// 	font-weight:700;
+		// 	color:$brand-dark;
+		// 	text-decoration:none;
+		// }
 	}
 
 }

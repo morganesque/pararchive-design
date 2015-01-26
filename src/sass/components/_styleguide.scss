@@ -51,7 +51,7 @@
 		line-height:1;
 	}
 
-	.typography .example {
+	.example {
 		margin-bottom:$bsu*2;
 	}
 
@@ -65,8 +65,8 @@
 		}
 	}
 
-	.buttons .example {
-		margin-bottom:$bsu/2;
+	.button {
+		margin:0 $bsu $bsu 0;
 	}
 
 	.icon-example {	

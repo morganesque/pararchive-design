@@ -5,21 +5,27 @@ data:
 - 
  title: How to make curtains
  url: lib-curtains.jpg
+ type: video
 -
  title: Grandad's WW1 Medal
  url: lib-medal.jpg
+ type: image
 -
  title: odlbirmingham.jpg
  url: lib-birmingham.jpg
+ type: image
 -
  title: Interview with Aunty Gladys
  url: lib-audio.jpg
+ type: audio
 -
  title: Two years in the life of my mother
  url: lib-mother.jpg
+ type: video
 -
  title: It all started when on person...
  url: lib-started.jpg
+ type: image
 ---
 <header class="header cf">
         {% include header.html %}
@@ -46,11 +52,11 @@ data:
 				--><div class="grid__item">
 					<div class="library-list__item">
 						<a class="my-image" style="background-image:url({{site.baseurl}}/img/{{item.url}});">						
-							<div class="my-label">video</div>						
+							<div class="item-type-label">{{item.type}}</div>						
 						</a>
 						<div class="my-desc">{{item.title}}</div>
 						<div class="my-actions">
-							<a href="#">Add a story&hellip;<span class="icon icon-right icon-remove"></span></a>	
+							<a href="#" class="link">Add a story&hellip;<span class="icon icon-right icon-remove"></span></a>	
 						</div>
 					</div>
 				</div><!--

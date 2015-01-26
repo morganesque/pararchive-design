@@ -29,6 +29,10 @@ a {
     }
 }
 
+/*
+	- - - - - - - - - TYPEFACES - - - - - - - - - 
+*/		
+
 .sans-face {
 	font-family:$font-family-sans-serif;
 	font-weight:300;
@@ -46,8 +50,14 @@ a {
 	font-weight:400;
 }
 
+/*
+	- - - - - - - - - HEADERS - - - - - - - - - 
+*/		
+
 .page-header {
 	padding-top:$bsu/2;
+	border-bottom:2px solid $grey-light;
+	margin-bottom:$bsu;
 }
 
 .section-header {
@@ -92,6 +102,10 @@ a {
 	margin-bottom:$bsu/4;	
 }
 
+/*
+	- - - - - - - - - OTHERS - - - - - - - - - 
+*/		
+
 .message {
 	position:relative;
 	@extend .epsilon;
@@ -101,7 +115,6 @@ a {
 	padding-right:$bsu*2;
 	text-shadow:0 2px 1px rgba(black,0.42);
 	margin-bottom:$bsu/2;
-
 
 	.close {
 		position:absolute;
@@ -113,6 +126,18 @@ a {
 			color:$brand-dark;
 		}
 	}
+}
+
+.item-type-label {
+	@extend .third-face;
+	letter-spacing:0.25em;
+	position: absolute;
+	top:0;left:0;
+	background-color:$brand-secondary;
+	color:white;
+	padding:0.25em 0.25em 0.25em 0.5em;
+	font-size:$milli-size;
+	text-transform:uppercase;
 }
 
 .text--circle {
@@ -148,7 +173,7 @@ a {
 .nav.actions {	
 	clear:both;	
 	margin:0;
-	padding:$bsu/3 0;
+	// padding:$bsu/3 0;
 	@extend .zeta;
 	li a {&:after {content:"\0020\2022";color:$grey;margin:0 0.42em}}
 	li:last-child a {&:after{content:none;}}

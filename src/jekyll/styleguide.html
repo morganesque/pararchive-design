@@ -11,7 +11,8 @@ title: Styleguide
 
 	<hr class="rule" />
 	<p>A front-end style guide for the Pararchive (Yarn) project</p>
-
+	
+	<!-- COLOURS -->
 	<div class="pattern">
 		<h1 class="pattern__title">Colours</h1>
 		<div class="col brand-dark">brand-dark<br />#217D7C</div>
@@ -23,6 +24,7 @@ title: Styleguide
 		<div class="col grey-light">grey-light<br />#DDDFE7</div>
 	</div>
 
+	<!-- FONTS -->
 	<div class="pattern">
 		<h1 class="pattern__title">Fonts</h1>
 		<div class="fontfaces code" data-codeblock="#fontfaces">
@@ -34,6 +36,7 @@ title: Styleguide
 		<div class="pattern__notes">These are Google fonts. <a href="https://www.google.com/fonts#ReviewPlace:refine/Collection:Quicksand|Halant|Oswald" target="_blank">Other weights</a> are available etc.</div>
 	</div>
 
+	<!-- FONT SIZES -->
 	<div class="pattern">
 		<h1 class="pattern__title">Font Sizes</h1>
 		<div class="fontsize code" data-codeblock="#fontsizes">
@@ -48,107 +51,80 @@ title: Styleguide
 		<div id="fontsizes"></div>
 	</div>
 
+	<!-- TYPOGRAPHY -->
 	<div class="pattern">
 		<h1 class="pattern__title">Typography</h1>
 		<div class="typography">
 			<div class="example">
-				<h1 class="section-header" data-codeblock="#sechead">Section Header</h1>
+<p data-codeblock="#pnorm">Normal text (16px)</p>
+				<div id="pnorm"></div>
+			</div>
+			<div class="example">
+<h1 class="section-header" data-codeblock="#sechead">Section Header</h1>
 				<div id="sechead"></div>
 			</div>
 			<div class="example">
-				<h3 class="sub-header" data-codeblock="#subhead">Sub-Header</h3>
+<h3 class="sub-header" data-codeblock="#subhead">Sub-Header</h3>
 				<div id="subhead"></div>
 			</div>
 			<div class="example">
-				<h4 class="form-title" data-codeblock="#formtitle">Form title</h4>
+<h4 class="form-title" data-codeblock="#formtitle">Form title</h4>
 				<div id="formtitle"></div>
 			</div>
 			<div class="example">
-				<p class="message" data-codeblock="#mess">Message</p>
+<p class="message" data-codeblock="#mess">This is a message to the user. Hello user!</p>
 				<div id="mess"></div>
-			</div>
-			<div class="example">
-<ul class="block-list" data-codeblock="#blklist">
-	<li><a href="#" class="block-list__link">Block List Link</a></li>
-	<li><a href="#" class="block-list__link">Block List Link</a></li>
-	<li><a href="#" class="block-list__link">Block List Link</a></li>
-	<li><a href="#" class="block-list__link">Block List Link</a></li>
-</ul>
-				<div id="blklist"></div>
-			</div>
-			<div class="example">
-				<a href="#" class="link" data-codeblock="#baslnk">basic link</a>
-				<div id="baslnk"></div>
-			</div>
-			<div class="example">
-				<div class="island bg-grey">
-					<a href="#" class="link link--reverse" data-codeblock="#revlink">reversed link</a>
-				</div>
-				<div id="revlink"></div>
-			</div>
-
-			<div class="example">
-				<div class="code" data-codeblock="#linkflrght">
-<a href="#" class="link">basic link</a>
-<a href="#" class="link float--right">link float right</a>
-				</div>
-				<div id="linkflrght"></div>
 			</div>
 		</div>
 	</div>	
 
+	<!-- LINKS & BUTTONS -->
 	<div class="pattern">
-		<h1 class="pattern__title">Icons</h1>
-		<div class="icon-example"><span class="icon icon-home"></span><br />icon-home</div>
-		<div class="icon-example"><span class="icon icon-image"></span><br />icon-image</div>
-		<div class="icon-example"><span class="icon icon-headphones"></span><br />icon-headphones</div>
-		<div class="icon-example"><span class="icon icon-play"></span><br />icon-play</div>
-		<div class="icon-example"><span class="icon icon-library"></span><br />icon-library</div>
-		<div class="icon-example"><span class="icon icon-tags"></span><br />icon-tags</div>
-		<div class="icon-example"><span class="icon icon-map"></span><br />icon-map</div>
-		<div class="icon-example"><span class="icon icon-calendar"></span><br />icon-calendar</div>
-		<div class="icon-example"><span class="icon icon-bubble"></span><br />icon-bubble</div>
-		<div class="icon-example"><span class="icon icon-user"></span><br />icon-user</div>
-		<div class="icon-example"><span class="icon icon-spinner"></span><br />icon-spinner</div>
-		<div class="icon-example"><span class="icon icon-remove"></span><br />icon-remove</div>
-		<div class="icon-example"><span class="icon icon-menu"></span><br />icon-menu</div>
-		<div class="icon-example"><span class="icon icon-star-off"></span><br />icon-star-off</div>
-		<div class="icon-example"><span class="icon icon-star-on"></span><br />icon-star-on</div>
-		<div class="icon-example"><span class="icon icon-close"></span><br />icon-close</div>
-		<div class="icon-example"><span class="icon icon-checkmark"></span><br />icon-checkmark</div>
-		<div class="icon-example"><span class="icon icon-minus"></span><br />icon-minus</div>
-		<div class="icon-example"><span class="icon icon-plus"></span><br />icon-plus</div>
-		<div class="icon-example"><span class="icon icon-arrow-up"></span><br />icon-arrow-up</div>
-		<div class="icon-example"><span class="icon icon-arrow-right"></span><br />icon-arrow-right</div>
-		<div class="icon-example"><span class="icon icon-arrow-down"></span><br />icon-arrow-down</div>
-		<div class="icon-example"><span class="icon icon-arrow-left"></span><br />icon-arrow-left</div>
-		<div class="icon-example"><span class="icon icon-quotes-left"></span><br />icon-arrow-left</div>
-		<div class="icon-example"><span class="icon icon-quotes-right"></span><br />icon-arrow-left</div>
-		<pre><code>&lt;span class=&quot;icon icon-home&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-image&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-headphones&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-play&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-library&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-tags&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-map&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-calendar&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-bubble&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-user&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-spinner&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-remove&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-menu&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-star&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-close&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-checkmark&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-minus&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-plus&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-arrow-up&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-arrow-right&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-arrow-down&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;icon icon-arrow-left&quot;&gt;&lt;/span&gt;</code></pre>		
-		<div class="pattern__notes">These icons are all taken from the <a href="https://icomoon.io/#preview-free">icomoon free set</a>. Some are probably not used in the service any longer.</div>
+		<h1 class="pattern__title">Links &amp; Buttons</h1>
+		<div class="example">
+<a href="#" class="link" data-codeblock="#baslnk">basic link</a>
+			<div id="baslnk"></div>
+		</div>
+		<div class="example">
+			<div class="island bg-grey">
+<a href="#" class="link link--reverse" data-codeblock="#revlink">reversed link</a>
+			</div>
+			<div id="revlink"></div>
+		</div>
+
+		<div class="example">
+			<div class="code" data-codeblock="#linkflrght">
+<a href="#" class="link">basic link</a>
+<a href="#" class="link float--right">link float right</a>
+			</div>
+			<div id="linkflrght"></div>
+		</div>		
+		<div class="example">
+<ul class="block-list" data-codeblock="#blklist">
+<li><a href="#" class="block-list__link">Block List Link</a></li>
+<li><a href="#" class="block-list__link">Block List Link</a></li>
+<li><a href="#" class="block-list__link">Block List Link</a></li>
+<li><a href="#" class="block-list__link">Block List Link</a></li>
+</ul>
+			<div id="blklist"></div>
+		</div>		
+		<div class="example">
+			<div class="code" data-codeblock="#butns">
+<p><a href="#" class="button">button</a></p>
+<p><a href="#" class="button medium">medium button</a></p>
+<p><a href="#" class="button large">large button</a></p>
+<p><input type="button" class="button" value="input button"/></p>
+			</div>
+			<div id="butns"></div>
+		</div>
 	</div>
 
+	<!-- ICONS -->
+	<div class="pattern">
+		{% include styleguide/icons.html %}
+	</div>
+
+	<!-- ICONS CIRCLE -->
 	<div class="pattern">
 		<h1 class="pattern__title">Icons in circles?!?</h1>
 		<div class="icon-example"><span class="icon icon-minus icon--circle"></span><br />icon-minus</div>
@@ -160,12 +136,13 @@ title: Styleguide
 		<div class="pattern__notes">These icons can also be used within a circle by adding the icon--circle class.</div>
 	</div>
 
+	<!-- ICONS REVERSED -->
 	<div class="pattern">
 		<h1 class="pattern__title">Icons in circles reversed!?!</h1>
 		<div class="island bg-grey">
-		<div class="icon-example"><span class="icon icon-minus icon--circle icon--reverse"></span><br />icon-minus</div>
-		<div class="icon-example"><span class="icon icon-plus icon--circle icon--reverse"></span><br />icon-plus</div>
-		<div class="icon-example"><span class="icon icon-close icon--circle icon--reverse"></span><br />icon-close</div>
+			<div class="icon-example"><span class="icon icon-minus icon--circle icon--reverse"></span><br />icon-minus</div>
+			<div class="icon-example"><span class="icon icon-plus icon--circle icon--reverse"></span><br />icon-plus</div>
+			<div class="icon-example"><span class="icon icon-close icon--circle icon--reverse"></span><br />icon-close</div>
 		</div>
 		<pre><code>&lt;span class=&quot;icon icon-minus icon--circle icon--reverse&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-minus
 &lt;span class=&quot;icon icon-plus icon--circle icon--reverse&quot;&gt;&lt;/span&gt;&lt;br /&gt;icon-plus
@@ -173,16 +150,7 @@ title: Styleguide
 		<div class="pattern__notes">If using them on a dark background you can reverse the colours.</div>
 	</div>	
 
-	<div class="pattern">
-		<h1 class="pattern__title">Buttons</h1>
-		<div class="buttons">
-			<div class="example"> 
-				<a href="#" class="button">button</a>  
-				<a href="#" class="button large">large button</a>
-				<input type="button" class="button" value="input button"/> 
-			</div>
-		</div>
-	</div>
+
 
 	<h1 class="pattern-section">Reading Interface</h1>
 
