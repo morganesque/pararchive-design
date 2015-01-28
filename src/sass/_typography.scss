@@ -171,8 +171,12 @@ a {
 }
 
 .nav.actions {	
+	background-color:$grey-blue;
+	padding:$bsu/2;
+	line-height:0.8;
 	clear:both;	
 	margin:0;
+	text-transform:uppercase;
 	// padding:$bsu/3 0;
 	@extend .zeta;
 	li a {&:after {content:"\0020\2022";color:$grey;margin:0 0.42em}}
