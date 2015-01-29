@@ -1,0 +1,33 @@
+.more-stories {	
+
+	.grid__item {
+		width:100% * 1/3;
+	}
+
+	.more-stories__item {
+		display:block;
+		background-color:$brand-dark;
+		min-height:300px;
+
+		&:hover {
+			.thumb-container img {
+				transform:scale(1) translateX(0);
+			}
+		}
+	}
+
+	.thumb-container {
+		position:relative;
+		width:100%;
+		height:0;
+		padding-top:62%;
+		overflow:hidden;
+
+		img {
+			position:absolute;
+			top:0;left:0;
+			transform:scale(1.1);
+			transition:transform 0.5s $easeOutQuint;
+		}
+	}
+}
