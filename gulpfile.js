@@ -177,6 +177,12 @@ gulp.task('sync',function()
         .pipe($.browserSync.reload({stream:true}));
 });
 
+gulp.task('scss-lint',function() 
+{
+    gulp.src(glob.sass)
+        .pipe($.scssLint());
+});
+
 /*
     - - - - - - - - - - - - - - - - - - - - - - - END OF TASKS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 */        

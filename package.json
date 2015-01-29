@@ -31,6 +31,9 @@
     "gulp-shell": "~0.2.11",
     "gulp-filter": "~1.0.2",
     "gulp-sourcemaps": "~1.2.8",
-    "gulp-scss-lint": "~0.1.6"
+    "gulp-scss-lint": "~0.1.6",
+    "commander": "~2.6.0",
+    "grep1": "0.0.5",
+    "chalk": "~0.5.1"
   }
 }
