@@ -48,9 +48,9 @@
 		.grid__item {
 			@include aboveOr(pem(640))
 			{
-				width:20%;
-				&.bigger {width:40%;}
+				width:17%;
+				&.bigger {width:32%;}
 			}
 		}
 	}
-}
+}// .reading
