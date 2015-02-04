@@ -18,14 +18,14 @@ hr {
 
 a {
     text-decoration: none;
-    color: $brand-dark;
+    color: $brand-primary;
 
 	.reverse & {
     	color:rgba(white, 0.76);
     }
 
     &:hover {
-        color:$brand-primary;
+        color:lighten($brand-primary,10%);
     }
 }
 
@@ -141,10 +141,10 @@ a {
 }
 
 .text--circle {
-	@extend .sans-face;			
+	@extend .third-face;			
 	color:$brand-dark;
 	background-color:rgba(white,0.95);	
-	$size:1em;
+	$size:2em;
 	min-width:$size;
 	height:$size;
 	padding:0 $bsu/4;
