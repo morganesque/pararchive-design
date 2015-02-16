@@ -4,7 +4,7 @@ source: src/jekyll
 # where to stick the results of the jekyll conversion
 destination: build/flats
 
-keep_files: ['css','js','img']
+keep_files: ['css','js','img','images']
 
 # Name of your blog (this will show up at the top of your page and in the RSS feed)
 name: Pararchive Flats

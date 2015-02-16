@@ -15,6 +15,7 @@
     border-radius: 1em;
     background-color: $brand-primary;
     border:none;
+    white-space:nowrap;
 
     @extend .zeta;
     &:hover {
@@ -31,7 +32,8 @@
     }
 
     &.medium {
-        @extend .delta;
+        @extend .epsilon;
+        line-height:1.2;
         padding:$bsu/3 $bsu;
     }
 

@@ -70,8 +70,8 @@ gulp.task('sass',function()
         cssFilter,
         $.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
         $.footer('/*# sourceMappingURL=styles.css.map */\n'),
-        cssFilter.restore(),
         $.browserSync.reload({stream:true}),
+        cssFilter.restore(),        
         gulp.dest(dest.css) // this makes sure the sourcemap gets to the live CSS fodler.
     );
 

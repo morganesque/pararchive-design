@@ -11,7 +11,15 @@
 			outline:none;
 			background-color:white;
 
-		}
+		}		
+	}
+
+	input[type="submit"],
+	input[type="button"] {
+		@extend .zeta;
+		@extend .button;
+		width:auto;	
+
 	}
 
 	textarea {

@@ -11,6 +11,12 @@
 	}
 }
 
+tr.top {
+	border-top:1px solid $brand-secondary;
+}
+td .icon {opacity:0.76}
+td .icon-checkmark {color:$brand-primary;}
+
 .pattern {
 
 	margin-bottom:$bsu*4;

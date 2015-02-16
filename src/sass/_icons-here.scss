@@ -1,0 +1,45 @@
+.icon-right {
+    float: right;
+    padding-top: .25em;
+}
+
+.icon--circle {
+    background-color:$brand-primary;
+    width:0.5em;height:0.5em;
+    border-radius:1em;
+    padding:0.5em;
+    color:white;
+    @extend .zeta;
+}
+
+.icon--reverse {
+    color:$brand-primary;
+    background-color:white;
+}
+
+.icon-star-on {color:$brand-primary}
+.icon-star-off {color:rgba($grey,0.5)}
+
+.icon-spinner {
+    line-height: 1;
+    display: inline-block;
+    height: 1em;
+    animation: anim-rotate 2s infinite linear;
+    &:before {
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1;
+
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+@keyframes anim-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

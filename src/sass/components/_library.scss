@@ -50,7 +50,7 @@
 
 .library-list__item {
 	
-	margin:0 $bsu/2 $bsu*2;
+	margin:0 0 $bsu*2;
 
 	.my-image {
 		display:block;
@@ -62,23 +62,13 @@
 		filter:saturate(0.5);
 		transition:all 0.3s ease-out;		
 	}
+	
 	&:hover .my-image {background-size:105%;filter:saturate(1);}
 
 	.my-desc {
 		padding:$bsu/2;
 		@extend .serif-face;		
 		background-color:$grey-light;
-	}
-
-	.my-actions {		
-		// a {
-		// 	display:block;
-		// 	background-color:$grey-blue;		
-		// 	padding:$bsu/4 $bsu/2;
-		// 	font-weight:700;
-		// 	color:$brand-dark;
-		// 	text-decoration:none;
-		// }
 	}
 
 }

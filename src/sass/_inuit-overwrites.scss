@@ -1,0 +1,24 @@
+/*
+    – it's "sans borders" silly!
+    Takes away the borders from the top and bottom of this block list.
+*/        
+.block-list--sans {
+    border:none;
+    li:last-child {border:none;}
+}
+ 
+/*
+    Project specific alteration of block-list__link.    
+*/           
+.block-list__link {
+    font-weight:400;
+    padding-left:0;    
+    line-height:1.2;    
+}
+
+/*
+	Just giving the table cells a on-brand colouring.	
+*/	
+.table--striped tbody tr:nth-of-type(odd) {
+    background-color: $grey-light;
+}	
