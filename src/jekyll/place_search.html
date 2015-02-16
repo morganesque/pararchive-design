@@ -1,0 +1,129 @@
+---
+layout: default
+title: Home
+stories:
+- 
+ title: How to make curtains
+ url: lib-curtains.jpg
+ author: James
+- 
+ title: Winchester Friends
+ url: lib-started.jpg
+ author: John Pinchen
+- 
+ title: Frog Hooper And Tales Of the Unexpected Trans-Continental Drifters.
+ url: lib-birmingham.jpg
+ author: Doug Francis
+items:
+- 
+ title: Ment Friching On The Wold
+ url: lib-medal.jpg
+ type: video
+- 
+ title: jognhamptyn.jpeg
+ url: lib-mother.jpg
+ type: image
+people:
+- 
+ title: Floella Benjamin
+ url: people-floella.jpg
+- 
+ title: Fred Harris
+ url: people-harris.jpg
+- 
+ title: Bob Carolgees The Rumpole of the Baileys
+ url: people-carolgees.jpg
+---
+<header class="header cf">
+        {% include header.html %}
+</header>
+
+<section class="block-page centered">
+
+	<header class="page-header">
+		<h1 class="section-header"> Bute </h1>		
+	</header>
+
+	<h1 class="form-title push--bottom">7 stories <a href="#" class="button push-half--left">see all</a></h1>
+
+	<div class="grid">
+
+		<div class="grid__item bobby_davro"><!-- .grid__item -->
+
+		{% if page.stories %}
+	  		{% for item in page.stories %}
+			<a href="#" class="box bg-gl push--bottom">
+				<div class="thumb-container">
+					<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+				</div>					
+				<div class="soft-half">
+					<p class="story-title delta push-half--bottom">{{item.title}}</p>
+					<p class="author flush--bottom brand-face" style="font-weight:700">{{item.author}}</p>
+				</div>				
+			</a>	
+				
+		</div><div class="grid__item bobby_davro"><!-- .grid__item -->
+			{% endfor %}
+		{% endif %}		
+			
+		</div><!-- .grid__item -->
+	</div><!-- .grid -->		
+
+	<hr class="rule" />
+
+	<h1 class="form-title push--bottom">2 items <a href="#" class="button push-half--left">see all</a></h1>
+
+	<div class="grid">
+
+		<div class="grid__item bobby_davro"><!-- .grid__item -->
+
+		{% if page.items %}
+	  		{% for item in page.items %}
+			<a href="#" class="box bg-gl push--bottom">
+				<div class="thumb-container">
+					<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+					<div class="item-type-label">{{item.type}}</div>	
+				</div>					
+				<div class="soft-half">
+					<p class="story-title delta push-half--bottom">{{item.title}}</p>
+				</div>				
+			</a>	
+				
+		</div><div class="grid__item bobby_davro"><!-- .grid__item -->
+			{% endfor %}
+		{% endif %}		
+			
+		</div><!-- .grid__item -->
+	</div><!-- .grid -->	
+
+	<hr class="rule" />
+
+	<h1 class="brand-face push--bottom delta">4 people <a href="#" class="button push-half--left">see all</a></h1>
+
+	<div class="grid">
+
+		<div class="grid__item bobby_davro"><!-- .grid__item -->
+
+		{% if page.people %}
+	  		{% for item in page.people %}
+			<div class="bg-gl push--bottom">			
+				<div class="soft-half">
+					<div class="thumb-container thumb-container--circle">
+						<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+					</div>
+					<p class="gamma flush--bottom">{{item.title}}</p>
+					<p>Appears in 5 stories</p>
+					<p class="text--center push-half--bottom"><a href="#" class="button">About this person</a></p>
+				</div>				
+			</div>	
+				
+		</div><div class="grid__item bobby_davro"><!-- .grid__item -->
+			{% endfor %}
+		{% endif %}		
+			
+		</div><!-- .grid__item -->
+	</div><!-- .grid -->	
+
+</section><!-- .reading -->
+
+<script	type="text/javascript" src="{{site.baseurl}}/js/reading.js"></script>
