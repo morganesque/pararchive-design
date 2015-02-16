@@ -50,10 +50,10 @@ data:
 		{% if page.data %}
 	  		{% for item in page.data %}
 				--><div class="grid__item">
-					<div class="artefact-summary-box">
+					<div class="bg-gl push--bottom">
 						<div class="thumb-container">
-							<div class="item-type-label">{{item.type}}</div>						
 							<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+							<div class="item-type-label">video</div>						
 						</div>					
 						<div class="soft-half">{{item.title}}</div>
 						<ul class="nav actions bg-gb">

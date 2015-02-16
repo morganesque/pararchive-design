@@ -1,6 +1,16 @@
 ---
 layout: default
 title: Edit Story Page
+blocks:
+- 
+ title: The man let's call him Peter to protect his identity opened
+ url: https://farm2.staticflickr.com/1142/1093616383_21232e81f1.jpg
+- 
+ title: The man let's call him Peter to protect his identity opened
+ url: https://farm3.staticflickr.com/2838/13871456814_3206997037_b.jpg
+- 
+ title: The man let's call him Peter to protect his identity opened
+ url: https://farm3.staticflickr.com/2836/13845242124_a65ee515eb_b.jpg
 ---
 <header class="header cf">
         {% include header.html %}
@@ -31,10 +41,13 @@ title: Edit Story Page
 
 			<div class="grid__item">
 
+			{% if page.blocks %}
+	  		{% for item in page.blocks %}
+
 				<div class="block-thumb">
-					<div class="block-thumb__image" style="background-image:url(https://farm2.staticflickr.com/1142/1093616383_21232e81f1.jpg);"></div>
+					<div class="block-thumb__image" style="background-image:url({{item.url}});"></div>
 					<div class="push-half">
-						<p class="block-thumb__desc">The man, let's call him 'Peter' to protect his identity opened&hellip;</p>
+						<p class="block-thumb__desc">{{item.title}}</p>
 						<hr class="rule push-half--bottom" />
 						<p class="block-thumb__meta">1 item &bull; 3 notes</p>
 					</div>
@@ -46,20 +59,8 @@ title: Edit Story Page
 
 			</div><div class="grid__item">
 
-				<div class="block-thumb">
-					<div class="block-thumb__image" style="background-image:url(https://farm2.staticflickr.com/1142/1093616383_21232e81f1.jpg);"></div>
-					<div class="push-half">
-						<p class="block-thumb__desc">The man, let's call him 'Peter' to protect his identity opened&hellip;</p>
-						<hr class="rule push-half--bottom" />
-						<p class="block-thumb__meta">1 item &bull; 3 notes</p>
-					</div>
-					<ul class="nav actions bg-gb">
-						<li><a href="#" class="link action">edit</a></li>
-						<li><a href="#" class="link action">delete</a></li>
-					</ul>
-				</div>
-
-			</div><div class="grid__item">
+			{% endfor %}
+			{% endif %}					
 
 				<a href="#" class="block-thumb block-thumb--new">
 					<p class="push-half--bottom"><span class="icon icon-plus icon--circle"></span></p>

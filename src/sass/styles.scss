@@ -36,31 +36,6 @@ $bsu:$base-spacing-unit; // shorthand.
 	Stuff for the styleguide - don't really need to include this is final styles.
 */		
 @import "components/styleguide";
-
-
-
-/*
-–– TAKE OUT BEFORE MOVING TO PRODUCTION CODE.
-
-$headings-font-weight:		300;
-$grid-gutter-width:         16px !default;
-@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
-@import "icons";
-@import "layout";
-@import "components/login";
-@import "components/header";
-// @import "components/all-stories";
-// @import "components/your-stories";
-// @import "components/story-panel";
-// @import "components/edit-story";
-// @import "components/edit-block";
-// @import "components/view-footer";
-// @import "components/view-story";
-// @import "components/view-block";
-// @import "components/view-block-notes";
-// @import "components/view-block-artefacts";
-*/
-
 @import "isuck";
 
 /*
