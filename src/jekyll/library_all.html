@@ -50,12 +50,12 @@ data:
 		{% if page.data %}
 	  		{% for item in page.data %}
 				--><div class="grid__item">
-					<div class="library-list__item">
+					<div class="artefact-summary-box">
 						<div class="thumb-container">
 							<div class="item-type-label">{{item.type}}</div>						
 							<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
 						</div>					
-						<div class="my-desc">{{item.title}}</div>
+						<div class="soft-half">{{item.title}}</div>
 						<ul class="nav actions bg-gb">
 							<li><a href="#" class="link">Add to story</a></li>
 							<li><a href="#" class="link">Delete</a></li>

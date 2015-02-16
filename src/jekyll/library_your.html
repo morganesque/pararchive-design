@@ -47,11 +47,12 @@ stories:
 		<div class="grid"><!--
 	  		{% for item in page.stories[0] %}
 				--><div class="grid__item">
-					<div class="library-list__item">
-						<a class="my-image" style="background-image:url({{site.baseurl}}/img/{{item.url}});">						
-							<div class="item-type-label">video</div>						
-						</a>
-						<div class="my-desc">{{item.title}}</div>
+					<div class="artefact-summary-box">
+						<div class="thumb-container">
+							<div class="item-type-label">{{item.type}}</div>						
+							<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+						</div>					
+						<div class="soft-half">{{item.title}}</div>
 						<ul class="nav actions bg-gb">
 							<li><a href="#" class="link">Add to story</a></li>
 							<li><a href="#" class="link">Delete</a></li>
@@ -64,11 +65,12 @@ stories:
 		<div class="grid"><!--
 	  		{% for item in page.stories[1] %}
 				--><div class="grid__item">
-					<div class="library-list__item">
-						<a class="my-image" style="background-image:url({{site.baseurl}}/img/{{item.url}});">						
-							<div class="item-type-label">video</div>						
-						</a>
-						<div class="my-desc">{{item.title}}</div>
+					<div class="artefact-summary-box">
+						<div class="thumb-container">
+							<div class="item-type-label">{{item.type}}</div>						
+							<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+						</div>					
+						<div class="soft-half">{{item.title}}</div>
 						<ul class="nav actions bg-gb">
 							<li><a href="#" class="link">Add to story</a></li>
 							<li><a href="#" class="link">Delete</a></li>

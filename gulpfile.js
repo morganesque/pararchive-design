@@ -64,7 +64,7 @@ gulp.task('sass',function()
             style:'compressed', // Can be nested, compact, compressed, expanded 
             loadPath:'bower_components', 
             quiet:true,
-            sourcemap: "auto", 
+            // sourcemap: "auto", 
             sourcemapPath: 'sass'
         }),
         cssFilter,

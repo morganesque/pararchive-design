@@ -60,3 +60,14 @@
 }
 
 pre {white-space:pre}
+
+.page-desc {
+    @extend .epsilon;
+    color:$brand-secondary;
+    max-width:38em;
+}
+
+.artefact-summary-box {
+    margin:0 0 $bsu*2;
+    background-color:$grey-light;
+}
