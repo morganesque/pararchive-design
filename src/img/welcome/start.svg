@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="240px" height="150px" viewBox="0 0 240 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Icons" sketch:type="MSArtboardGroup">
+            <g id="icon_startstory" sketch:type="MSLayerGroup" transform="translate(78.694444, 28.531250)">
+                <g id="Group" sketch:type="MSShapeGroup">
+                    <path d="M53.234633,0.0236605106 L83.5283033,24.9154209 L34.3803167,82.2630216 L4.08664652,57.3712612 L53.234633,0.0236605106 L53.234633,0.0236605106 Z" id="Rectangle-path" fill="#26B9B9"></path>
+                    <g transform="translate(3.442130, 0.000000)" id="Rectangle-path" fill="#000000">
+                        <path d="M49.6929147,0.000651250926 L59.7908048,8.29790472 L10.6422534,65.6461646 L0.54436328,57.3489111 L49.6929147,0.000651250926 L49.6929147,0.000651250926 Z" opacity="0.2"></path>
+                        <path d="M59.7893133,8.29786109 L69.8878484,16.5945614 L20.7404268,73.9489895 L10.6418917,65.6522892 L59.7893133,8.29786109 L59.7893133,8.29786109 Z" opacity="0.3"></path>
+                        <path d="M69.8893695,16.5931979 L79.9872595,24.8904514 L30.839273,82.2380521 L20.7413829,73.9407986 L69.8893695,16.5931979 L69.8893695,16.5931979 Z" opacity="0.4"></path>
+                    </g>
+                    <path d="M4.00233623,57.3192031 L0,92.2103501 L33.6666094,82.2092425 L4.00233623,57.3192031 Z" id="Shape" fill="#FFFFFF"></path>
+                    <path d="M12.3589664,88.5384583 L0,92.2103501 L1.46978935,79.4004647 L12.3589664,88.5384583 Z" id="Shape" fill="#5E6375"></path>
+                    <path d="M28.6411001,77.9934942 L0,92.2103501 L33.6666094,82.2092425 L28.6411001,77.9934942 Z" id="Shape" opacity="0.3" fill="#000000"></path>
+                    <path d="M9.30407639,61.7681557 L0,92.2103501 L12.3796192,64.3480318 L9.30407639,61.7681557 Z" id="Shape" opacity="0.5" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

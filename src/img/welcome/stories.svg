@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="240px" height="150px" viewBox="0 0 240 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Icons" sketch:type="MSArtboardGroup">
+            <g id="icon_browsestories" sketch:type="MSLayerGroup" transform="translate(57.000000, 34.875000)">
+                <path d="M0.09375,37.704 C2.51025,42.30075 23.64075,80.244 62.769,80.244 C101.88975,80.244 123.0225,42.30075 125.43975,37.704 L0.09375,37.704 L0.09375,37.704 Z" id="Shape" opacity="0.3" fill="#000000" sketch:type="MSShapeGroup"></path>
+                <path d="M62.76975,0 C23.076,0 1.90275,34.22025 0,37.43775 C1.90275,40.6545 23.076,74.87625 62.76975,74.87625 C102.45525,74.87625 123.63075,40.6545 125.53425,37.43775 C123.63075,34.22025 102.45525,0 62.76975,0 L62.76975,0 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Oval" fill="#26B9B9" sketch:type="MSShapeGroup" cx="62.13825" cy="38.18775" rx="27" ry="27"></ellipse>
+                <ellipse id="Oval" fill="#5E6375" sketch:type="MSShapeGroup" cx="62.13825" cy="38.18775" rx="15.75" ry="15.75"></ellipse>
+                <circle id="Oval" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="72.411" cy="24.531" r="10.125"></circle>
+                <path d="M41.3355,20.976 C37.4655,25.6485 35.13825,31.64625 35.13825,38.187 C35.13825,53.09925 47.22675,65.187 62.13825,65.187 C71.187,65.187 79.19025,60.73125 84.09075,53.898 C63.84825,53.23125 46.90425,39.56775 41.3355,20.976 L41.3355,20.976 Z" id="Shape" opacity="0.3" fill="#000000" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

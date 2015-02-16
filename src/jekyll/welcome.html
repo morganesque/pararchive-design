@@ -1,0 +1,57 @@
+---
+layout: default
+title: Index
+---
+<header class="header cf">
+        {% include header.html %}
+</header>
+
+<div class="centered">
+
+	<header class="page-header">
+		<h1 class="section-header">Welcome to Yarn</h1>
+	</header>
+
+	<p>Hello Dean, thanks for registering! What would you like to do next</p>
+
+	<div class="grid welcome-choice-list">
+		<div class="grid__item">
+			<div class="welcome-choice bg-gl">
+				<div class="thumb-container" style="padding-top:62%"><img src="../images/welcome/start.svg" width="100%" /></div>
+				<div class="islet flush--bottom">
+					<p>Start telling a story on Yarn. It's ease and can be as short or long as you link.</p>
+					<div class="fix-bottom push--top"><a href="#" class="button medium">Start a story</a></div>
+				</div>
+			</div>
+		</div><div class="grid__item">
+			<div class="welcome-choice bg-gl">
+				<div class="thumb-container" style="padding-top:62%"><img src="../images/welcome/stories.svg" width="100%" /></div>
+				<div class="islet flush--bottom">
+					<p>Yarn has a growing network of stories. Take a look.</p>
+					<div class="fix-bottom push--top"><a href="#" class="button medium">Browse stories</a></div>
+				</div>
+			</div>
+		</div><div class="grid__item">
+			<div class="welcome-choice bg-gl">
+				<div class="thumb-container" style="padding-top:62%"><img src="../images/welcome/archives.svg" width="100%" /></div>
+				<div class="islet flush--bottom">
+					<p>Browser the archive of the Science Museum, BBC and more, and use them in your stories.</p>
+					<div class="fix-bottom push--top"><a href="#" class="button medium">Browse archives</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	$(window).on("load",function(e)
+	{
+		// return;
+		var h=0;
+		$('.welcome-choice').each(function() {			
+		    if ($(this).height() > h) {h = $(this).height();}		    
+		    console.log(h);		
+		}).height(h).css('padding-bottom',"0");
+	});
+</script>
