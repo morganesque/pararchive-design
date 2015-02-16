@@ -1,0 +1,62 @@
+/*
+    A load of styles which I've just hacked in
+    and should really be consolidated into other 
+    more organised places. If this file has 
+    anything in it beyond this comment then 
+    you can quite legitmately say that I 
+    comprehensively and commemoratively suck!
+*/
+
+.link {
+    @extend .sans-face;
+    font-weight:700;
+    color:$brand-dark;
+
+    &.link--reverse {
+        color:white;
+        &:hover {
+            color:$brand-primary;
+        }
+    }    
+}
+
+.thumb-container {
+
+    position:relative;
+    width:100%;
+    height:0;
+    padding-top:62%;
+    overflow:hidden;
+
+    img {
+        position:absolute;
+        top:0;left:0;
+        transform:scale(1.1);
+        transition:transform 0.5s $easeOutQuint;
+        // filter:sepia(0.5) hue-rotate(180deg) saturate(0.5);
+
+        *:hover > & {
+            transform:scale(1) translateX(0);
+            filter:none;
+        }
+    }
+}
+
+.welcome-choice-list {
+    .grid__item {width:100% * 1/3}
+}
+
+.welcome-choice {   
+    position:relative; 
+    padding-bottom:$bsu*1.75;
+    .thumb-container {
+        transition:background-color 0.5s $easeOutQuint;
+        background-color:$brand-primary
+    }
+    &:hover .thumb-container {
+        background-color:lighten(desaturate($brand-primary,20%),10%);
+    }
+    .fix-bottom {width:100%;position:absolute;left:$bsu/2;bottom:$bsu;}
+}
+
+pre {white-space:pre}
