@@ -75,13 +75,14 @@ data:
 					{% if page.data %}
 				  		{% for item in page.data %}
 							--><div class="grid__item">
-								<div class="bg-gl push--bottom">
+								<a href="#" class="box bg-gl push--bottom">
 									<div class="thumb-container">
-										<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+										<div class="image" style="background-image:url({{site.baseurl}}/img/{{item.url}})"></div>
+										<!-- <img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/> -->
 										<div class="item-type-label">video</div>						
 									</div>					
 									<div class="soft-half">{{item.title}}</div>
-								</div>								
+								</a>								
 							</div><!--
 				  		{% endfor %}
 					{% endif %}			

@@ -54,7 +54,8 @@ people:
 	  		{% for item in page.stories %}
 			<a href="#" class="box bg-gl push--bottom">
 				<div class="thumb-container">
-					<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+					<div class="image" style="background-image:url({{site.baseurl}}/img/{{item.url}})"></div>
+					<!-- <img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/> -->
 				</div>					
 				<div class="soft-half">
 					<p class="story-title delta push-half--bottom">{{item.title}}</p>
@@ -81,7 +82,8 @@ people:
 	  		{% for item in page.items %}
 			<a href="#" class="box bg-gl push--bottom">
 				<div class="thumb-container">
-					<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+					<div class="image" style="background-image:url({{site.baseurl}}/img/{{item.url}})"></div>
+					<!-- <img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/> -->
 					<div class="item-type-label">{{item.type}}</div>	
 				</div>					
 				<div class="soft-half">
@@ -108,8 +110,10 @@ people:
 	  		{% for item in page.people %}
 			<div class="bg-gl push--bottom">			
 				<div class="soft-half">
-					<div class="thumb-container thumb-container--circle">
-						<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+					<div class="centre-half">
+						<div class="thumb-person">
+							<div class="image" style="background-image:url({{site.baseurl}}/img/{{item.url}})"></div>
+						</div>
 					</div>
 					<p class="gamma flush--bottom">{{item.title}}</p>
 					<p>Appears in 5 stories</p>

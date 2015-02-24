@@ -19,19 +19,19 @@ stories:
  url: lib-medal.jpg
  author: Doug Francis
 - 
- title: jognhamptyn.jpeg
+ title: The Story Of My Mother
  url: lib-mother.jpg
  author: Doug Francis
 - 
- title: Floella Benjamin
+ title: Floella Benjamin And The Hamble Scandal
  url: people-floella.jpg
  author: Doug Francis
 - 
- title: Fred Harris
+ title: Where Is Fred Harris?
  url: people-harris.jpg
  author: Doug Francis
 - 
- title: Bob Carolgees The Rumpole of the Baileys
+ title: Bob Carolgees On Rumpole of the Baileys
  url: people-carolgees.jpg
  author: Doug Francis
 ---
@@ -42,10 +42,10 @@ stories:
 <section class="block-page centered">
 
 	<header class="page-header">
-		<h1 class="section-header"> Bute </h1>		
+		<h1 class="section-header"><a href="#">Bute</a> / stories</h1>		
 	</header>
 
-	<h1 class="form-title push--bottom">7 stories <a href="#" class="button push-half--left">see all</a></h1>
+	<h1 class="form-title push--bottom">7 stories</h1>
 
 	<div class="grid">
 
@@ -55,7 +55,8 @@ stories:
 	  		{% for item in page.stories %}
 			<a href="#" class="box bg-gl push--bottom">
 				<div class="thumb-container">
-					<img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/>
+					<div class="image" style="background-image:url({{site.baseurl}}/img/{{item.url}})"></div>
+					<!-- <img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/> -->
 				</div>					
 				<div class="soft-half">
 					<p class="story-title delta push-half--bottom">{{item.title}}</p>

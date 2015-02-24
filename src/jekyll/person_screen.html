@@ -1,0 +1,120 @@
+---
+layout: default
+title: Home
+stories:
+- 
+ title: How to make curtains
+ url: people-floella3.jpg
+ author: James Obalinkeron
+- 
+ title: Winchester Friends
+ url: empty.png
+ author: Wendy Pinchen
+- 
+ title: Frog Hooper And Tales Of the Unexpected Trans-Continental Drifters.
+ url: people-floella2.jpg
+ author: Doug Francis
+- 
+ title: Ment Friching On The Wold
+ url: people-floella3.jpg
+ author: Felicity Pembrookshire
+- 
+ title: Jogging as a way to relax
+ url: people-floella.jpg
+ author: Debishmuss Blandish
+- 
+ title: How to make curtains
+ author: James Obalinkeron
+ url: empty.png
+- 
+ title: Winchester Friends
+ author: Wendy Pinchen
+ url: people-floella3.jpg
+- 
+ title: Frog Hooper And Tales Of the Unexpected Trans-Continental Drifters.
+ url: people-floella2.jpg
+ author: Doug Francis
+- 
+ title: Ment Friching On The Wold
+ url: empty.png
+ author: Felicity Pembrookshire
+- 
+ title: Jogging as a way to relax
+ url: empty.png
+ author: Debishmuss Blandish
+
+people:
+- 
+ title: Floella Benjamin
+ url: people-floella.jpg
+- 
+ title: Fred Harris
+ url: people-floella2.jpg
+- 
+ title: Bob Carolgees The Rumpole of the Baileys
+ url: people-floella3.jpg
+---
+<header class="header cf">
+        {% include header.html %}
+</header>
+
+<section class="block-page centered">
+
+	<header class="page-header">
+		<h1 class="section-header"> Floella Benjamin </h1>		
+	</header>	
+
+	<div class="grid">
+		
+		<div class="grid__item" style="width:70%"><!-- .grid__item -->
+
+			<h1 class="form-title push--bottom">There are 21 stories containing a person called <a href="#">Floella Benjamin</a></h1>
+
+			<ul class="block-list block-list--sans">	
+
+			{% if page.stories %}
+	  		{% for item in page.stories %}
+
+				<li class="delta">
+					<img src="{{site.baseurl}}/img/{{item.url}}" width="50px" style="float:left;margin-right:12px;"/>
+					<a href="#" class="block-list__link">{{item.title}}</a>
+					<small>by {{item.author}}</small>
+					<!-- <span class="float--right"><a href="#" class="button">view story</a></span> -->
+				</li>
+	
+			{% endfor %}
+			{% endif %}	
+				<li class="delta">
+					<a href="#" class="button">View All</a>
+				</li>
+
+			</ul>	
+
+		</div><div class="grid__item" style="width:30%"><!-- .grid__item -->
+
+			<div class="bg-gl push--bottom island">
+				<h2 class="form-title">Items</h2>
+				<p>People have used the following items with <a href="#">floella benjamin</a> in stories</p>
+			</div>
+
+			{% if page.people %}
+	  		{% for item in page.people %}
+				<div class="bg-gl push--bottom soft-half text--center">			
+					<div style="width:80%;margin:0 auto">
+						<div class="thumb-person push-half--bottom">
+							<div class="image" style="background-image:url({{site.baseurl}}/img/{{item.url}})"></div>
+							<!-- <img src="{{site.baseurl}}/img/{{item.url}}" width="100%" alt="something useful"/> -->
+						</div>
+					</div>
+					<p class="push-half--bottom">Appears in 5 stories</p>
+					<p class="push-half--bottom"><a href="#" class="button">view stories</a></p>
+				</div>						
+			{% endfor %}
+			{% endif %}	
+
+		</div><!-- .grid__item -->
+	</div>	
+
+</section><!-- .reading -->
+
+<script	type="text/javascript" src="{{site.baseurl}}/js/reading.js"></script>
