@@ -17,3 +17,24 @@
 
 .block-page__left {width:62%;}
 .block-page__right {width:38%;}
+
+.block-page__notes {
+
+	@extend .delta;
+
+	.note {
+		padding-bottom:$bsu;
+		border-bottom:1px solid $grey-light;
+	}
+
+	.note__author {
+		text-transform:uppercase;
+		letter-spacing:0.1em;
+		font-weight:700;
+	}
+
+	.note__time {
+		@extend .epsilon;
+		color:rgba($grey,0.42);
+	}
+}

@@ -40,3 +40,12 @@ $brand-color:       $brand-primary!default;
 .bg-gl {
 	background-color:$grey-light;
 }
+
+.attention {
+	transition:all 0.3s $easeOutQuint;
+}
+
+.text--primary {color:$brand-primary;}
+.text--secondary {color:$brand-secondary;}
+.text--tertiary {color:$brand-tertiary;}
+.text--yell {color:yellow;}
