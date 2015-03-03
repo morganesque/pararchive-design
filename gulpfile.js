@@ -20,7 +20,8 @@ var files = {
     "jsielib":  "lteie8.min.js",
 }
 
-var build = 'build/flats';
+// var build = 'build/flats';
+var build = '../taz/Source/pararchive/public';
 
 /*
     keep all the globs together here.
@@ -39,10 +40,9 @@ var glob = {
     keeping all the destinations together here.
 */        
 var dest = {
-    "sass":      ".tmp",
     "css":      build+"/css",
     "js":       build+"/js",
-    "img":      build+"/img",
+    "img":      build+"/images",
 }
 
 /*
@@ -61,15 +61,15 @@ gulp.task('sass',function()
     var combined = $.streamCombiner(
         gulp.src(glob.sass),
         $.rubySass({
-            style:'compressed', // Can be nested, compact, compressed, expanded 
+            style:'expanded', // Can be nested, compact, compressed, expanded 
             loadPath:'bower_components', 
             quiet:true,
-            // sourcemap: "auto", 
-            sourcemapPath: 'sass'
+            // sourcemap:'inline', 
+            // sourcemapPath: 'sass'
         }),
         cssFilter,
         $.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
-        $.footer('/*# sourceMappingURL=styles.css.map */\n'),
+        // $.footer('/*# sourceMappingURL=styles.css.map */\n'),
         $.browserSync.reload({stream:true}),
         cssFilter.restore(),        
         gulp.dest(dest.css) // this makes sure the sourcemap gets to the live CSS fodler.

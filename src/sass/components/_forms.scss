@@ -1,16 +1,18 @@
-.form-fields {
-
+.form-fields 
+{
 	input,
 	textarea {
 		@extend .delta;
+		line-height:1.4;
 		padding:$bsu/4;
 		width:100%;
 		border:1px solid rgba($grey-blue,1);
 		background-color:rgba($grey-blue,0.22);
 		&:focus {
 			outline:none;
+			border:none;
+			box-shadow:0px 0px $bsu/2 1px rgba($brand-primary,0.5);
 			background-color:white;
-
 		}		
 	}
 
@@ -19,10 +21,39 @@
 		@extend .zeta;
 		@extend .button;
 		width:auto;	
+	}
 
+	input[type="checkbox"], 
+	input[type="radio"] {
+		font-size:inherit;
+		width:auto;
+		margin-top:0.15em;
 	}
 
 	textarea {
 		height:$bsu*10;
 	}
+}
+
+@mixin placeholderstyle()
+{
+	font-size:$h4-size;
+	padding:$bsu/8;
+	color:darken($grey-blue,15%);
+}
+
+::-webkit-input-placeholder {
+   @include placeholderstyle();
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   @include placeholderstyle();
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   @include placeholderstyle();
+}
+
+:-ms-input-placeholder {  
+   @include placeholderstyle();
 }

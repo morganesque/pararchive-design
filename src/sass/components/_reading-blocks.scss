@@ -10,9 +10,29 @@ $block_min:$bsu*12;
 	.block {
 		clear:both;
 		position:relative;
-		border-top:$bsu/4 solid $grey-blue;
-		padding:$bsu*2 0;
+		// border-top:$bsu/4 solid red;
+		padding:$bsu*2 0 0;
 	}
+
+	.block__numberer {
+		display:block;
+		position:relative;
+		width:100%;
+		height:$bsu/4;
+		background-color:$grey-blue;
+		margin:$bsu 0 $bsu*2;
+		.number {
+			$w:100px;
+			width:$w;
+			text-align:center;
+			position:absolute;
+			top:-$bsu/4;left:50%;
+			margin-left:-$w/2;
+			background:white;
+			@extend .delta;
+		}
+	}
+
 
 	.block__body { // .grid
 		vertical-align:top;

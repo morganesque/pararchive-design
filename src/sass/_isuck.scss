@@ -62,14 +62,9 @@ a.box {
         background-size:cover;
         transform:scale(1.1);
         transition:transform 1s $easeOutQuint;
-        // transition:all 0.5s $easeOutQuint;
-        // filter:sepia(0.5) hue-rotate(180deg) saturate(0.5);
 
         *:hover > & {
-            // width:110%;
-            // height:110%;
             transform:scale(1) translateX(0);
-            // filter:none;
         }
     }
 }
@@ -83,7 +78,12 @@ a.box {
     padding-bottom:$bsu*1.75;
     .thumb-container {
         transition:background-color 0.5s $easeOutQuint;
-        background-color:$brand-primary
+        background-color:$brand-primary;
+        .image 
+        {
+            height:auto;
+            padding:0;
+        }
     }
     &:hover .thumb-container {
         background-color:lighten(desaturate($brand-primary,20%),10%);

@@ -167,14 +167,12 @@ $(window).on("load",function(e)
 
 	$('.fancybox').fancybox({
 		padding:0,
-		helpers : {
-	        overlay : {locked:false},
-	    },
+		arrows:false,
+		nextClick:false,
+		helpers : {overlay : {locked:false}},
 	    afterShow:function()
         {
-        	var close = $('.fancybox-close');
-        	console.log(close);		
         	$('.fancybox-close').append('<span class="icon icon-close icon--circle icon--reverse"></span>');
-        }
+        },
 	});
 });
