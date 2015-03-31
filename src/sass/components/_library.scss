@@ -6,6 +6,7 @@
 	.tabs {
 		margin:0 auto;
 		text-align:center;
+
 		.tab {
 			display:inline-block;	
 			position:relative;
@@ -13,7 +14,7 @@
 			width:250px;
 			padding:$bsu/4;
 			font-weight:700;
-			@extend .delta;
+			@extend .epsilon;
 			color:$brand-dark;	
 			
 			a {
@@ -32,10 +33,9 @@
 }
 
 .library-list {
-	padding-top:$bsu;
 	.grid__item {
 		@include aboveOr(pem(640))  {width: 1/2 * 100%;}
 		@include aboveOr(pem(960))  {width: 1/3 * 100%;}
-		@include aboveOr(pem(1280)) {width: 1/4 * 100%;}
+		// @include aboveOr(pem(1280)) {width: 1/4 * 100%;}
 	}
 }

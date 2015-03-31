@@ -32,12 +32,17 @@
 		@extend .sans-face;
 		color:black;
 		font-size:2em;
+		a {
+			color:black;
+			&:hover {color:white;}
+		}
 	}
 
 	.story__description {
-		@extend .gamma;
+		@extend .beta;
 		@extend .serif-face;
 		font-style:italic;
+		font-weight:400;
 		color:$grey;
 		line-height:1.4;
 		text-align:center;

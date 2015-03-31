@@ -1,4 +1,5 @@
 .header {
+	@extend .zeta;
 	@extend .sans-face;
 	font-weight:300;
 	position:fixed;
@@ -15,8 +16,6 @@
 	display:block;
 	float:left;
 	line-height:$bsu*2;	
-	vertical-align:top;
-	// margin-left:$bsu;	
 	font-size:$bsu;
 	color:white;
 	transition:color 0.5s $easeOutQuint;
@@ -37,38 +36,40 @@
 	}
 }
 
+.header__title {
+	display:inline-block;
+}
+
 .logo-icon {
 	display:inline-block;
-	position:relative;
-	top:6px;
-	width:35px;
+	float:left;
+	margin:4px $bsu/4 0 0;
+	width:35px; height:50px;
 }
 
 .header__identity {
 
 	float:right;
 	margin-top:$bsu/2;
+	font-weight:400;
 	// margin-right:$bsu;	
 
-	.username {opacity:0.5;}
-
-	a {
-		color:white;
-		text-decoration:none;
-		&:hover {text-decoration:underline;}
-	}
+	.username {opacity:0.5;}	
 
     & > li {
-        
+
         display:list-item;
         height:$bsu*2;
         background:$brand-secondary;
         padding:0 $bsu;
         border:none;
-
-        > a {
-            display:block;
-        }
+        a {
+			color:white;
+			text-decoration:none;
+			&:hover,
+			&:active,
+			&:focus, {text-decoration:underline;}
+		}
     }
 
     .menu {

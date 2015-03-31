@@ -2,27 +2,23 @@
 	background-color:$grey-light;
 	padding-top:1px;
 	margin-bottom:$bsu;
+	@extend .cf;
 }
 
 .item-story__content {
 	position:relative;
-	margin:$bsu*1.5 $bsu;
+	margin:$bsu;
 	line-height:1.4;
-	@extend .gamma;
-	// .icon {
-	// 	position:absolute;
-	// 	&.icon-quotes-left {top:-$bsu*1.25;left:0;}
-	// 	&.icon-quotes-right {bottom:-$bsu*0.75;right:0;}
-	// }
-
-	// .icon-quotes-left {font-size:2.5em;float:left;margin:0 $bsu/2 0 0;}
+	@extend .epsilon;
+	font-style:italic;
 	.icon {
 		position:relative;top:2px;
 	}
 }
 
 .item-story__thumb {
-	display:inline-block;
+	display:block;
+	float:left;
 	width:100px;height:100px;
 	margin-left:$bsu;
 	margin-bottom:$bsu;
@@ -30,6 +26,7 @@
 }
 
 .item-story__details {
+	clear:both;
 	@extend .epsilon;
 	background-color:$grey-blue;
 	padding:$bsu/2 $bsu;

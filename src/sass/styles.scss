@@ -16,8 +16,15 @@ $bsu:$base-spacing-unit; // shorthand.
 /// These are the components
 ////
 @import "components/header";
+@import "components/footer";
 @import "components/buttons";
 @import "components/forms";
+
+@import "components/grids";
+@import "components/overlay";
+@import "components/pagination";
+
+@import "components/your-story-list";
 @import "components/reading-story";
 @import "components/reading-blocks";
 @import "components/block-item";
@@ -28,7 +35,10 @@ $bsu:$base-spacing-unit; // shorthand.
 @import "components/archive-partner";
 @import "components/edit";
 @import "components/edit-block";
-@import "components/footer";
+@import "components/media_container";
+@import "components/preflight";
+@import "components/thumbs";
+@import "components/edit-story";
 
 @import "helpers";
 

@@ -34,6 +34,7 @@ var glob = {
     "jekyll":   ['src/jekyll/**/*.{html,yml,md,mkd,markdown}','_config.yml'],
     "html":     build+'/**/*.{html,yml,md,mkd,markdown,php}',
     "css":      '.tmp/*.css',
+    "jshint":   build+"/js/**/reading.js",
 };
 
 /*
@@ -64,6 +65,7 @@ gulp.task('sass',function()
             style:'expanded', // Can be nested, compact, compressed, expanded 
             loadPath:'bower_components', 
             quiet:true,
+            'sourcemap=none':true,
             // sourcemap:'inline', 
             // sourcemapPath: 'sass'
         }),
@@ -195,7 +197,7 @@ gulp.task('browser-sync', function() {
     $.browserSync.init(null, {
         open:false,
         // server: {baseDir: "./build/"},
-        proxy: "pararchive.flats"
+        proxy: "127.0.0.1:8000"
     });
 });
 
@@ -226,6 +228,13 @@ gulp.task('watch', function()
 
         // Watch $.jekyll files
         gulp.watch(glob.jekyll, ['jekyll'])
+});
+
+gulp.task('lint',function()
+{
+    return gulp.src(glob.jshint)
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('default'));
 });
 
 /*

@@ -1,0 +1,36 @@
+.your-story-list {
+
+     text-align:center;
+
+    .grid__item {
+        width:100%;
+    }
+
+    .privacy {
+        // @extend .zeta;
+    }
+    
+    .story-title {
+        @extend .delta;
+        display:block;
+        line-height:1.4;
+        margin-bottom:$bsu;
+    }
+
+    @include aboveOr(pem(640))
+    {
+        text-align:left;
+        .grid__item.left {width:65%;}        
+        .grid__item.right {width:35%;}        
+        .edit-story {float:right;}
+        .privacy {text-align:right; clear:right}
+    }
+
+    @include aboveOr(pem(1100))
+    {
+        .grid__item.left {width:50%;}        
+        .grid__item.right {width:50%;}  
+        .privacy {clear:none}
+        .edit-story {margin-left:$bsu;}
+    }
+}

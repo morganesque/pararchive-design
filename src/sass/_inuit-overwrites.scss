@@ -3,6 +3,7 @@
     Takes away the borders from the top and bottom of this block list.
 */        
 .block-list--sans {
+    @extend .block-list;
     border:none;
     li:last-child {border:none;}
 }

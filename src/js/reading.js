@@ -1,79 +1,47 @@
-var data = [];
+$(document).on("ready",function(e)
+{
+	// fancybox is the lightbox library we're using
+	// so this just enables it for the images on the page.
+	$('.fancybox').fancybox({
+		padding:0,
+		arrows:false,
+		nextClick:false,
+		closeClick:true,
+		helpers : {overlay : {locked:false}},
+        afterLoad  : function () {
+        	$('.fancybox-close').append('<span class="icon icon-close icon--circle icon--reverse"></span>');
+            $.extend(this, {
+                aspectRatio : false,
+                type    : 'html',
+                width   : '100%',
+                height  : '100%',
+                content : '<div class="fancybox-image" style="background-image:url(' + this.href + '); background-size:contain; background-position:50% 50%;background-repeat:no-repeat;height:100%;width:100%;" /></div>'
+            });
+        }
+	});
+});
+
+var cutMustard = function()
+{
+	if ($('html').hasClass("lt-ie9")) return false;
+	else return Modernizr.mq('only screen and (min-width:800px)');
+};
 
 $(window).on("load",function(e)
 {		
 	var controller = new ScrollMagic();	
-	var offset = 48;
+	var offset = 62;
 	var ui = {};
 	ui.blocks = $('.block');
-	// ui.prev = $('.prev .container');
-	// ui.next = $('.next .container');		
-	ui.begin = $('.begin');		
+	ui.mcs = $('.media-container.image');
 
-	var navigation = {
-
-		current:-1,
-		animating:false,
-
-		updateOnScroll:function(a,b,c)
-		{
-			if (this.animating) return;
-			this.current = a.target.number;
-		},
-
-		// prevClick:function(e)
-		// {
-		// 	e.preventDefault();
-		// 	if (this.current >= 0) 
-		// 	{
-		// 		this.current--;
-		// 		this.showBlock();
-		// 	}
-		// },
-
-		// nextClick:function(e)
-		// {
-		// 	e.preventDefault();
-		// 	if (this.current < ui.blocks.length-1) 
-		// 	{
-		// 		this.current++;
-		// 		this.showBlock();
-		// 	}
-		// },
-
-		showBlock:function()
-		{
-			this.animating = true;
-			if (this.current < 0)
-			{
-				$('html, body').stop(true,false).animate({
-			        scrollTop: 0,
-			    }, 2000, 'easeOutQuint',_.bind(this.doneAnimating,this));
-			} else {
-				var dy = $(ui.blocks[this.current]).offset().top - offset;
-				$('html, body').stop(true,false).animate({
-			        scrollTop: dy,
-			    }, 2000, 'easeOutQuint',_.bind(this.doneAnimating,this));
-			    // this.updateNavs();	
-			}
-		},
-
-		doneAnimating:function()
-		{	
-			this.animating = false;
-			// $('html, body').off("scroll mousedown DOMMouseScroll mousewheel keyup");
-		},
-	};
-
-
-	/*
-		Only for 640 and up.
-	*/		
-	if ( Modernizr.mq('only screen and (min-width: 40em)') )
-	{
+	// if we're going to resize all the images then we'll have to 
+	// wait for that to finish before doing the superscroll thing.
+	doSuperScroll = function()
+	{		
 		/*
 			Create the sticky side panels for each block.
-		*/		
+		*/			
 		ui.blocks.each(function(a,b)
 		{
 			var body = $(b).find('.block__body');
@@ -87,92 +55,109 @@ $(window).on("load",function(e)
 					triggerElement: body, 
 					duration: bh-mh,
 					triggerHook:0,
-					offset:-offset,
+					offset:-offset
 				})
-				.on('enter', _.bind(navigation.updateOnScroll,navigation))
+				// .on('enter', _.bind(navigation.updateOnScroll,navigation))
 				.setPin(meta[0],{pushFollowers:false})
 				.addTo(controller);
 
 			o.number = a;
-		});	
+		});			
+	};
+
+	// just calling it now as soon as the page 
+	// content is loaded only for 640 and up.
+	if (cutMustard())
+	{
+		console.log('doing super scroll');		
+		doSuperScroll();
 	}
 
-
-	// ui.prev.on('click',_.bind(navigation.prevClick,navigation));
-	// ui.next.on('click',_.bind(navigation.nextClick,navigation));
-	// navigation.updateNavs();
-
-	/*
-		When they click the Begin button at the top of the story.
-	*/		
-	ui.begin.on('click',function(e)
-	{
-		e.preventDefault();
-		navigation.current = 0;
-		navigation.showBlock();
-	});
-
-	/*
-		Stop animation if the user starts to do something during it.
-	*/		
-	$('html, body').on("scroll mousedown DOMMouseScroll mousewheel keyup",function()
-	{
-		$('html, body').stop();
-	});
-
+	// run through all the images and resize any landscape ones 
+	// so that they look nice and neat (then do the superscroll thing).
+	// var count = 0;
+	// ui.mcs.each(function(i,el)
+	// {
+	// 	var mc = this;
+	// 	if ($(el).hasClass('image'))
+	// 	{
+	// 		var url = $(el).find('a').attr('href');
+	// 		var img = new Image();
+	// 		img.onload = function()
+	// 		{				
+	// 			if (this.width > this.height) $(mc).css({"padding-bottom":(100*this.height/this.width)+'%'});
+	// 			count++;
+	// 			if (count == ui.mcs.length) doSuperScroll();
+	// 		}
+	// 		img.src = url;
+	// 	}
+	// });
 });
 
-$(window).on("load",function(e)
+$(document).on("ready",function(e)
 {
-	var ui = {};
-	ui.close = $('.close');
-	ui.notes = $('.meta__notes a');
-	ui.links = $('.meta__links a');
-	ui.showlinks = $('.item__details .show-link');
-	ui.stars = $('.meta__star a');
-
-	ui.close.on('click',function(e)
+	if (cutMustard())
 	{
-		e.preventDefault();
-		$(this).closest('.meta__container').removeClass('notes');
-		$(this).closest('.meta__container').removeClass('links');
-	});	
+		$('.block').each(function(i,el)
+		{
+			var ui = {};
+			ui.mc = $(el).find('.meta__container');
+			ui.close = $(el).find('.close');
+			ui.notes = $(el).find('.meta__notes.slide a');
+			ui.links = $(el).find('.meta__links a');
+			ui.showlink = $(el).find('.item__details .show-link');
+			ui.star = $(el).find('.meta__star a');
+			ui.showing = false;
 
-	ui.notes.on('click',function(e)
-	{
-		e.preventDefault();
-		$(this).closest('.block__meta').find('.meta__container').addClass('notes');
-	})
+			ui.notes.hide();
+			ui.links.hide();
 
-	ui.links.on('click',function(e)
-	{
-		e.preventDefault();
-		$(this).closest('.block__meta').find('.meta__container').addClass('links');		
-	})
+			$(window).on('load',function()
+			{
+				ui.notes.show();
+				ui.links.show();
+			});
 
-	ui.showlinks.on('click',function(e)
-	{
-		e.preventDefault();
-		$(this).closest('.item__details').toggleClass('showing');
-		$(this).find('.icon').toggleClass('icon-arrow-down');
-		$(this).find('.icon').toggleClass('icon-arrow-up');
-	});
+			// enabling the slide out notes click shizzle.
+			ui.notes.on('click',function(e)
+			{
+				e.preventDefault();
+				ui.mc.removeClass('links');		
+				ui.mc.toggleClass('notes');
+			});
 
-	ui.stars.on("click",function(e)
-	{
-		e.preventDefault();
-		$(this).find('.icon').toggleClass('icon-star-on');
-		$(this).find('.icon').toggleClass('icon-star-off');
-	});
+			// enabling the slide out styory links shizzle.
+			ui.links.on('click',function(e)
+			{
+				e.preventDefault();
+				ui.mc.removeClass('notes');
+				ui.mc.toggleClass('links');		
+			});
 
-	$('.fancybox').fancybox({
-		padding:0,
-		arrows:false,
-		nextClick:false,
-		helpers : {overlay : {locked:false}},
-	    afterShow:function()
-        {
-        	$('.fancybox-close').append('<span class="icon icon-close icon--circle icon--reverse"></span>');
-        },
-	});
+			// sliding those slide out panels back again fo sho!
+			ui.close.on('click',function(e)
+			{
+				e.preventDefault();
+				ui.mc.removeClass('notes');
+				ui.mc.removeClass('links');
+			});		
+
+			//	the click which expands the item details below the item.
+			ui.showlink.on('click',function(e)
+			{
+				e.preventDefault();
+				$(this).closest('.item__details').toggleClass('showing');
+				$(this).find('.icon').toggleClass('icon-arrow-down');
+				$(this).find('.icon').toggleClass('icon-arrow-up');
+			});
+
+			// faking the fave star to be all clicked and that.
+			ui.star.on("click",function(e)
+			{
+				e.preventDefault();
+				$(this).find('.icon').toggleClass('icon-star-on');
+				$(this).find('.icon').toggleClass('icon-star-off');
+			});
+		});	
+	}
 });

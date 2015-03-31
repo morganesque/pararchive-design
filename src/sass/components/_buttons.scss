@@ -2,6 +2,20 @@
     margin-top:$bsu/2;
 }
 
+.link {
+    @extend .sans-face;
+    font-size:16px;
+    font-weight:700;
+    color:$brand-dark;
+
+    &.link--reverse {
+        color:white;
+        &:hover {
+            color:$brand-primary;
+        }
+    }    
+}
+
 .button {
     position:relative;
     @extend .sans-face;
@@ -16,14 +30,27 @@
     background-color: $brand-primary;
     border:none;
     white-space:nowrap;
-
     @extend .zeta;
+
+    &.medium {
+        @extend .delta;
+        padding:$bsu/3 $bsu*(3/2);
+    }
+
+    &.large {
+        @extend .gamma;
+        line-height:1.2;
+        padding:$bsu/3 $bsu;
+        background-color: lighten($brand-primary,4%);
+    }
+
     &:hover {
         top:-1px;
         background-color: $brand-dark;
         box-shadow: 0 1px 1px rgba(black,.22);
     }
-    &:active { 
+    &:active,
+    &:focus { 
         top:1px;
         color:rgba(white,1);
         background-color: $brand-dark;
@@ -31,15 +58,13 @@
         box-shadow:none;
     }
 
-    &.medium {
-        @extend .epsilon;
-        line-height:1.2;
-        padding:$bsu/3 $bsu;
-    }
-
-    &.large {
-        @extend .gamma;
-        padding:$bsu/2 $bsu*2;
+    &.button--reverse {
+        color:$brand-dark;
+        background-color:rgba(white,0.90);
+        &:hover {
+            color:$brand-primary;
+            background-color:darken($brand-dark,10%);
+        }
     }
 }
 

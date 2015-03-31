@@ -1,19 +1,23 @@
-/*
-	Only within reading pages.
-*/		
+// set up the size of the left side (containing the artefacts/items).
+// ---------------------
 $block_media_width: 70%;
 $block_meta_width: 100% - $block_media_width;
-$block_min:$bsu*12;
+$block_min:$bsu*12; // 336
+$breakpoint:800;
 
 .reading {
 
+	// breakpoint for going "mobile" (single col)
+
+
+	// basic div for each block mainly just a semantic nicety.
 	.block {
 		clear:both;
 		position:relative;
-		// border-top:$bsu/4 solid red;
 		padding:$bsu*2 0 0;
 	}
 
+	// separating line between blocks with centered number in middle.
 	.block__numberer {
 		display:block;
 		position:relative;
@@ -33,23 +37,29 @@ $block_min:$bsu*12;
 		}
 	}
 
-
-	.block__body { // .grid
+	// .grid 
+	.block__body { 
 		vertical-align:top;
-		min-height:$block_min;
+		@include aboveOr(pem($breakpoint))
+		{
+			min-height:$block_min;	
+		}		
 	}
 
-	.block__content { // .grid__item
-		@include aboveOr(pem(640))
+	// .grid__item - left side containing all the items and shit.
+	.block__content { 
+		@include aboveOr(pem($breakpoint))
 		{
 			width:$block_media_width;	
+			// min-height:$block_min;
 		}		
 		z-index:0;
 	}
 
+	// .grid__item - right side (above mobile) containing the meta data.
 	.block__meta {
 		
-		@include aboveOr(pem(640))
+		@include aboveOr(pem($breakpoint))
 		{
 			width:$block_meta_width;	
 		}
@@ -60,7 +70,7 @@ $block_min:$bsu*12;
 		.nav {
 			margin-bottom:0;
 
-			li {
+			.meta__link {
 				padding:$bsu/2 0;
 				border-bottom:1px solid rgba(black,0.2);
 				// &:first-child {border:none;}
@@ -69,67 +79,35 @@ $block_min:$bsu*12;
 		} 
 	}
 
-	.meta__container {
+	.block__meta--mobile {
+	
+		@extend .cf;
+		@extend .block__meta;
 
-		position:absolute;
-		top:0;right:100%;
-		width:100% * $block_media_width / $block_meta_width;
-		padding-left:$bsu;
-		overflow:hidden;
-		min-height:$block_min;
-		opacity:0;
-		transition:opacity 0.5s $easeOutQuint;
-		pointer-events:none;
+		display:block;
+		padding:0 $bsu/2;
+		border:1px solid $grey-blue;
+		border-radius:0 $bsu $bsu 0;			
 
-		&.notes {
-			pointer-events:auto;
-			opacity:1;
-			.block__notes {transform:translate3d(0,$bsu,0);}
-			.block__noteactions {transform:translate3d(0,0,0);}			
-		}
-		&.links {
-			pointer-events:auto;
-			opacity:1;
-			.block__links {transform:translate3d(0,$bsu,0);}
-		}
-	}
-
-	.meta__link {
-
-		@extend .sans-face;
-
-		a {
-			display:block;				
+		.nav .meta__link {
+			border:none;
 			font-weight:700;
-			text-decoration:none;
-			transition:color 0.5s $easeOutQuint;
-
-			.icon--circle {				
-				transition:background-color 1s $easeOutQuint;
-			}
-			&:hover {
-				.icon--circle {
-					color:$brand-primary;
-					background:white;
-				}
-			}
 		}
-	}
 
-	.meta__progress {color:rgba($brand-secondary,0.76);}
+		.icon--reverse {background:transparent}
 
-	.meta__star {
-		font-size:24px;		
-	}	
+		&:hover,
+		&:active {
+			background-color:$brand-primary;
+			
+			.icon--reverse {color:white}
+			.meta__link {color:white;}
+		}
 
-	.block__links, .block__notes {		
-		position:absolute;
-		top:0;left:0;
-		padding:$bsu;
-		width:100%;
-		background-color:$grey-light;
-		transition:transform 0.5s $easeOutExpo;	
-		transform:translate3d(104%,$bsu,0);	
+		@include aboveOr(pem($breakpoint))
+		{
+			display:none;
+		}
 	}
 
 	.new-note {
@@ -137,35 +115,6 @@ $block_min:$bsu*12;
 		height:6em;
 		margin-bottom:$bsu;
 	}		
-
-	.close {
-		position:absolute;
-		top:$bsu;right:$bsu;
-		color:$brand-dark;
-		&:hover {
-			color:$brand-primary;
-		}
-
-	}
-
-	.block__noteactions {			
-		z-index:1;
-		position:absolute;
-		left:0;bottom:0;right:0;
-		background-color:$grey;
-		padding:$bsu/2 $bsu;
-		transition:transform 0.5s $easeOutExpo;	
-		transform:translate3d(104%,$bsu*3,0);
-
-		.fader {
-			position:absolute;
-			top:0;left:0;
-			transform:translateY(-100%);
-			width:100%;
-			height:$bsu*4;
-			background:linear-gradient(rgba($grey-light,0),rgba($grey-light,1) 90%),
-		}			
-	}
 
 	.form-title {
 		@extend .delta;
@@ -176,24 +125,5 @@ $block_min:$bsu*12;
 	}
 }
 
-.block__notes {
-	.note {
-		@extend .zeta;
-		@extend .serif-face;
-		color:$grey;
-		margin-bottom:$bsu/2;
-
-		p {
-			margin-bottom:0;		
-		}
-
-		.note__author {
-			color:$brand-dark;
-			font-weight:bold;
-		}
-
-		.note__content {
-			line-height:1.2;
-		}
-	}
-}
+// included here so that the variable follow through.
+@import "components/reading-blocks-meta";

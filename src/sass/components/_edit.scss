@@ -10,26 +10,61 @@
 	overflow:hidden;
 }
 
+.block-thumb-sort {
+	display:block;
+	float:left;
+	width:30%;
+	background-color:$grey-light;
+	margin-right:3%;
+	margin-bottom:$bsu;
+	overflow:hidden;
+	cursor:move;
+	border-radius:$bsu/2;	
+	animation: wobble 0.3s infinite ease-out;
+	box-shadow: 5px 5px 10px rgba(black,0.21);
+	&.ghost {
+		animation:none;
+		box-shadow:none;
+		background:$grey-blue;
+		& > * {opacity:0}
+	}
+}
+
+$t:1deg;
+@keyframes wobble  {
+  0%  { transform:  rotate(-$t); }
+  50%  { transform:  rotate($t); }
+  100%  { transform:  rotate(-$t); }
+}
+
 .block-thumb__image {
+	display:block;
 	background-size:cover;
+	background-repeat:no-repeat;
 	background-position:center center;
 	width:100%;
 	height:0;
 	padding-top:62%;
+	&.block-thumb__link {background-size:90% 90%;}
+	&.no-thumb {
+		background:$grey-blue url(/images/repeating_pattern.png) repeat scroll top center;
+	}
 }
 
 .block-thumb--new {
 	
-	width:100%;
-	height:284px;
-	padding:$bsu*4.5 0;
+	width:100%;	
+	height:0;
+	padding-top:140px;
+	padding-bottom:62%;
+	// padding:$bsu*4.5 0;
 	text-align:center;
 	border:1px solid $grey-light;
 	transition:background-color 0.5s $easeOutQuint;
 	.action {margin-bottom:0;}
 
 	&:hover {
-		background-color:rgba($grey-light,0.42);
+		background-color:rgba($grey-blue,1);
 
 		.icon {
 			transition:all 0.5s $easeOutQuint;

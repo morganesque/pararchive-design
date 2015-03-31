@@ -34,6 +34,7 @@
     "gulp-scss-lint": "~0.1.6",
     "commander": "~2.6.0",
     "grep1": "0.0.5",
-    "chalk": "~0.5.1"
+    "chalk": "~0.5.1",
+    "gulp-jshint": "~1.9.4"
   }
 }

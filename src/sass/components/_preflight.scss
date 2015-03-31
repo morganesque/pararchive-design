@@ -1,0 +1,25 @@
+.preflight-form {
+    
+    margin-bottom:$bsu;
+
+    > li {
+        width:100%;
+    }
+
+    .preflight-radio {
+        float:left;
+        @extend .push-half--right; 
+    }
+
+    .preflight-desc {
+        float:left;
+        width:80%;
+        max-width:555px;
+    }
+    
+    label {
+        @extend .epsilon;
+        font-weight:700;
+        margin-bottom:$bsu/4;
+    }
+}

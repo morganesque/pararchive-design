@@ -1,7 +1,8 @@
 /* my vars */
 $font-family-sans-serif:  	"Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       	"Halant", serif !default;
-$font-family-third:       	"Ubuntu Mono", sans-serif, !default;
+$font-family-serif:       	"Merriweather", serif !default;
+// $font-family-third:       	"Ubuntu Mono", sans-serif, !default;
+$font-family-third:       	Helvetica Neue, Helvetica, Arial, sans-serif, !default;
 
 /* bits of inuit I'm using */
 $using:true;
@@ -34,8 +35,8 @@ $use-greybox:       $using;
 
 /* Other inuit vars that I might want to change */
 
-$base-font-size:    16px!default;
-$base-line-height:  24px!default;
+$base-font-size:    14px!default;
+$base-line-height:  28px!default;
 
 $base-font-family:  sans-serif!default;
 
@@ -50,13 +51,13 @@ $kilo-size:         48px!default;
 
 $h1-size:           36px!default; // .alpha
 $h2-size:           30px!default; // .beta
-$h3-size:           28px!default; // .gamma 	// dean
-$h4-size:           20px!default; // .delta 	// dean 
+$h3-size:           24px!default; // .gamma 	// dean
+$h4-size:           22px!default; // .delta 	// dean 
 $h5-size:           18px!default; // .epsilon 	// dean
-$h6-size:           14px!default; // .zeta		// dean
+$h6-size:           16px!default; // .zeta		// dean
 
-$milli-size:        12px!default; // dean
-$micro-size:        10px!default;
+$milli-size:        14px!default; // dean
+$micro-size:        12px!default;
 
 $brand-face:        $font-family-sans-serif!default;
 $brand-round:       4px!default;

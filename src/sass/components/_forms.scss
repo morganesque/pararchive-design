@@ -1,19 +1,60 @@
 .form-fields 
 {
+	.textBox {
+		position:relative;
+		min-height:$bsu*4;
+
+		.textBox__edit,
+		.textBox__display,
+		textarea {
+			position:absolute;
+			top:0;left:0;
+			width:100%;
+			min-height:100%;
+		}
+	}
+
 	input,
-	textarea {
+	textarea,
+	.textBox__edit,
+	.textBox__display {
 		@extend .delta;
 		line-height:1.4;
 		padding:$bsu/4;
 		width:100%;
 		border:1px solid rgba($grey-blue,1);
 		background-color:rgba($grey-blue,0.22);
+		resize:none;
+		// white-space:pre;
 		&:focus {
 			outline:none;
 			border:none;
-			box-shadow:0px 0px $bsu/2 1px rgba($brand-primary,0.5);
-			background-color:white;
+			border:1px solid rgba($grey-blue,1);
+			box-shadow:0px 0px $bsu/4 1px rgba($brand-primary,0.5);
+			background-color:transparent;
 		}		
+	}
+
+	.textBox__display {
+		background:white;
+		overflow:scroll;
+		color:transparent;
+		opacity:0.5;
+		.highlight {
+			background:pink;
+		}
+	}
+
+	select {
+		@extend .delta;
+		line-height:1.4;
+		padding:$bsu/4;
+	    border:1px solid rgba($grey-blue,1);
+		background-color:rgba($grey-blue,0.22);
+	    border-radius: 0;
+	    color:$brand-primary;
+	    -webkit-appearance: none;
+	    &:focus { outline:none; }
 	}
 
 	input[type="submit"],
@@ -21,6 +62,13 @@
 		@extend .zeta;
 		@extend .button;
 		width:auto;	
+		&:focus {
+	        top:1px;
+	        color:rgba(white,1);
+	        background-color: $brand-dark;
+	        text-shadow:0 0 5px rgba(white,0.2);
+	        box-shadow:none;
+		}	
 	}
 
 	input[type="checkbox"], 
@@ -30,15 +78,20 @@
 		margin-top:0.15em;
 	}
 
-	textarea {
-		height:$bsu*10;
-	}
+	textarea,
+	.textBox__display {	
+
+		&.story-blurb {
+			height:$bsu*7;	
+		}
+	}	
+
+	label.inline {display:inline;}
 }
 
 @mixin placeholderstyle()
 {
 	font-size:$h4-size;
-	padding:$bsu/8;
 	color:darken($grey-blue,15%);
 }
 

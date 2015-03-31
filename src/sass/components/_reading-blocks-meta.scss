@@ -1,0 +1,110 @@
+.reading {
+
+	// hide both these on mobile as it won't make sense to have them doing that stuff.
+	.meta__container,
+	.meta__nav {
+		display:none;
+		@include aboveOr(pem($breakpoint)) {display:block;}
+	}
+
+	// the meta data links want to look all nice.
+	.meta__link {
+		@extend .sans-face;
+		a {
+			display:block;				
+			font-weight:700;
+			text-decoration:none;
+			transition:color 0.5s $easeOutQuint;
+
+			.icon--circle {				
+				transition:background-color 1s $easeOutQuint;
+			}
+			&:hover {
+				.icon--circle {
+					color:$brand-primary;
+					background:white;
+				}
+			}
+		}
+	}
+
+	// the clickable fave star 
+	.meta__star {@extend .gamma;}
+
+	// hidden div which slides out to reveal the meta-data stuff on desktop etc.
+	.meta__container {
+
+		position:absolute;
+		top:0;right:100%;
+		width:100% * $block_media_width / $block_meta_width;
+		padding-left:$bsu;
+		overflow:hidden;
+		min-height:$block_min;
+		opacity:0;
+		transition:opacity 0.5s $easeOutQuint;
+		pointer-events:none;
+
+		&.notes {
+			pointer-events:auto;
+			opacity:1;
+			.block__notes {transform:translate3d(0,$bsu,0);}
+			.block__noteactions {transform:translate3d(0,0,0);}			
+		}
+
+		&.links {
+			pointer-events:auto;
+			opacity:1;
+			.block__links {transform:translate3d(0,$bsu,0);}
+		}
+	}
+
+	// the two slide out panels for showing the meta data (on desktop).
+	.block__links, 
+	.block__notes {		
+		position:absolute;
+		top:0;left:0;
+		padding:$bsu;
+		width:100%;
+		background-color:$grey-light;
+		transition:transform 0.5s $easeOutExpo;	
+		transform:translate3d(104%,$bsu,0);	
+		// box-shadow:0px 3px 10px 0px rgba($grey,0.32)		
+		.lt-ie9 & {
+			display:none;
+		}
+	}
+
+	// this make the notes appear right in this context.
+	.block__notes {
+		height:$block_min;
+		min-height:$block_min;
+		overflow:auto;
+		padding-bottom:100px;
+		border-top:1px solid $grey-blue;		
+	}
+
+	// the actions at the foot of the slide out notes panel.
+	.block__noteactions {			
+		z-index:1;
+		position:absolute;
+		left:0;bottom:0;
+		width:100%;
+		padding:$bsu;
+		transition:transform 0.5s $easeOutExpo;	
+		transform:translate3d(104%,$bsu*3,0);
+		background:white;
+		border-top:1px solid $grey-blue;
+		border-bottom:1px solid $grey-blue;
+
+		.fader {
+			position:absolute;
+			top:0;left:0;
+			transform:translateY(-101%);
+			width:100%;
+			height:$bsu*2;
+			background:linear-gradient(rgba($grey-light,0),rgba($grey-light,1) 90%),
+		}			
+
+		// box-shadow:0px 3px 10px 0px rgba($grey,0.32)
+	}
+}

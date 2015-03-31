@@ -1,0 +1,11 @@
+.story-actions {
+    width:288px;
+    @extend .text--center; 
+    @extend .push--left;
+    @extend .push--bottom;
+    > p:last-child {
+        @extend .flush--bottom;
+    }
+    padding:$bsu 0;
+    border-left:1px solid $grey-blue;
+}
