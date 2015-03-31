@@ -1,0 +1,145 @@
+/*
+    A load of styles which I've just hacked in
+    and should really be consolidated into other 
+    more organised places. If this file has 
+    anything in it beyond this comment then 
+    you can quite legitmately say that I 
+    comprehensively and commemoratively suck!
+*/
+
+.svg .svg-fallback {
+    display:none;
+}
+
+/*
+    
+*/        
+a.box {
+    display:block;
+    color:inherit;
+    transition:background-color 2s $easeOutQuint;
+    &.bg-gl:hover,
+    &.bg-gl:active {
+        background-color:darken($grey-light,7%);
+    }
+}
+
+.welcome-choice {   
+    position:relative; 
+    padding-bottom:$bsu*1.75;
+    .thumb-container {
+        transition:background-color 0.5s $easeOutQuint;
+        background-color:$brand-primary;
+        .image 
+        {
+            height:auto;
+            padding:0;
+        }
+    }
+    &:hover .thumb-container {
+        background-color:lighten(desaturate($brand-primary,20%),10%);
+    }
+    .fix-bottom {width:100%;position:absolute;left:$bsu/2;bottom:$bsu;}
+}
+
+pre {white-space:pre}
+
+.edit-story {
+    @extend .cf;
+
+    .left {float:left;}
+    
+    .right {float:right}
+
+    .story-title {
+        font-weight:300;
+        line-height:1.4;
+    }
+    
+    .story-blurb {
+        font-style:italic;
+        line-height:1.5;
+    }
+}
+
+.id-marker {
+    position:absolute;
+    top:-$bsu*2;
+    left:0;    
+}
+
+.big {
+    font-size:2.5em;
+    line-height:1;
+}
+
+.middle {
+    width:62%;
+    margin:0 auto $bsu;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.user-story-list {  
+
+    .profile-image {
+        display:block;
+        max-width:200px;
+        margin:0 $bsu 0 0;
+        float:left;
+    }   
+    .profile-body {overflow:auto;}
+
+    @include aboveOr(pem(1024))
+    {
+        .profile-body {overflow:visible;}
+        .profile-image {margin-bottom:$bsu;}
+    }
+}
+
+.story-filter li {
+    border-right:1px solid $grey-light;
+}
+
+.search__left, .search__right {
+    display:inline-block;
+}
+.search__right {
+    margin-left:$bsu;
+}
+
+input.search {
+    width:100%;
+}
+
+.lifted {
+    box-shadow:0 $bsu/8 $bsu/4 0 rgba(black,0.42);
+    border-radius:$bsu/4;
+    border:$bsu/8 solid $brand-primary;
+}
+
+.error-icon__img {
+    width:30%;
+    max-width:150px;
+    display:block;
+    margin:0 auto $bsu;
+    @include aboveOr(pem(480))
+    {
+        width:100%;
+        margin-top:$bsu/2;
+    }
+}
+
+.error-text li {
+    color:black;
+    font-weight:700;
+}
+
+.char_count {
+    display:inline-block;
+    background-color:rgba($brand-secondary,0.42);
+    color:white;
+    padding:0 $bsu/4;
+}
